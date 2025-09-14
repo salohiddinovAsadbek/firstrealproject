@@ -1,6 +1,49 @@
+import { useEffect, useState } from "react";
 import "../styles/mainProducts.css";
+import ShowProducts from "./ShowProducts";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../store/products";
+import { addFilter } from "../store/filter";
 
 function MainProducts() {
+  const dispatch = useDispatch("");
+  const [searchName, setSearchName] = useState("");
+  const [currency, setCurrency] = useState("all");
+  const data = useSelector((state) => state.productsData);
+  const filteredData = useSelector((state) => state.filteredData);
+
+  useEffect(() => {
+    fetch("https://umaoil.up.railway.app/api/products")
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(getProducts(data));
+      })
+      .catch((err) => console.error("Error:", err));
+  }, []);
+
+  function Filter() {
+    let data2 = [];
+
+    for (let i = 0; i < data?.length; i++) {
+      const product = data[i];
+      const matchesName = product.name
+        .toLowerCase()
+        .includes(searchName.toLowerCase());
+      const matchesCurrency =
+        currency === "all" ? true : product.currency === currency;
+
+      if (matchesName && matchesCurrency) {
+        data2.push(product);
+      }
+    }
+
+    dispatch(addFilter(data2));
+  }
+
+  useEffect(() => {
+    console.log(filteredData);
+  }, [filteredData]);
+
   return (
     <div className="mainProducts">
       <h1>Barcha Mahsulotlar</h1>
@@ -15,15 +58,33 @@ function MainProducts() {
                 type="text"
                 id="search"
                 placeholder="Mahsulot nomi bilan qidirish..."
+                value={searchName}
+                onChange={(e) => {
+                  setSearchName(e.target.value);
+                  Filter();
+                }}
               />
             </label>
 
-            <select name="currency" className="currency">
+            <select
+              name="currency"
+              className="currency"
+              onChange={(e) => {
+                setCurrency(e.target.value);
+                Filter();
+              }}
+            >
               <option value="all">Barcha valyutalar</option>
               <option value="UZS">UZS</option>
               <option value="USD">USD</option>
             </select>
-            <select name="arrange" className="arrange">
+            <select
+              name="arrange"
+              className="arrange"
+              onChange={(e) => {
+                Filter();
+              }}
+            >
               <option value="tartiblash">Tartiblash</option>
               <option value="A-Z">Nomi (A-Z)</option>
               <option value="Z-A">Nomi (Z-A)</option>
@@ -34,8 +95,11 @@ function MainProducts() {
             </select>
           </div>
         </div>
-        <div className="searchProductsBottom"></div>
+        <div className="searchProductsBottom">
+          <p>388 ta mahsulot topildi</p>
+        </div>
       </div>
+      <ShowProducts />
     </div>
   );
 }

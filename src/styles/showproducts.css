@@ -1,0 +1,72 @@
+.showProducts {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(20 / 16 * 1vw);
+  margin-top: calc(30 / 16 * 1vw);
+  padding-bottom: calc(20 / 16 * 1vw);
+  justify-content: space-between;
+}
+
+.showProductsCard {
+  width: calc(245 / 16 * 1vw);
+  height: calc(325 / 16 * 1vw);
+  border: none;
+  border-radius: calc(15 / 16 * 1vw);
+  background-color: white;
+  box-shadow: 0 calc(6 / 16 * 1vw) calc(10 / 16 * 1vw) rgba(0, 0, 0, 0.15);
+  padding: calc(15 / 16 * 1vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.showProductsCard > img {
+  width: 100%;
+  height: calc(170 / 16 * 1vw);
+  border-radius: calc(7 / 16 * 1vw);
+}
+
+.showProductsCard > h1 {
+  font-size: calc(18 / 16 * 1vw);
+  color: rgb(31, 41, 55);
+  font-weight: 600;
+}
+
+.showProductsCard > p:nth-child(3) {
+  font-size: calc(14 / 16 * 1vw);
+  color: rgb(75, 85, 99);
+  margin-top: calc(10 / 16 * 1vw);
+  margin-bottom: calc(10 / 16 * 1vw);
+}
+
+.showProductsCard > p:nth-child(4) {
+  font-size: calc(14 / 16 * 1vw);
+  font-weight: 700;
+}
+
+.intoBasket {
+  background-color: var(--brand-color);
+  border: none;
+  border-radius: calc(10 / 16 * 1vw);
+  display: flex;
+  align-items: center;
+  gap: calc(10 / 16 * 1vw);
+  width: 100%;
+  height: calc(35 / 16 * 1vw);
+  justify-content: center;
+  margin-top: calc(15 / 16 * 1vw);
+}
+
+.intoBasket > i {
+  font-size: calc(14 / 16 * 1vw);
+  color: white;
+}
+
+.intoBasket > p {
+  color: white;
+  font-size: calc(14 / 16 * 1vw);
+  line-height: 100%;
+  font-weight: 400;
+}

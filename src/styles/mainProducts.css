@@ -1,12 +1,11 @@
 .mainProducts {
-  position: fixed;
+  position: absolute;
   padding-top: calc(83 / 16 * 1vw);
   padding-left: calc(265 / 16 * 1vw);
   background-color: #f9fafb;
   width: 100%;
   height: 100%;
   padding-right: calc(15 / 16 * 1vw);
-  padding-bottom: calc(15 / 16 * 1vw);
 }
 
 .searchProducts {
@@ -80,4 +79,10 @@
 .searchProductsTop > div > select {
   font-size: calc(14 / 16 * 1vw);
   height: 100%;
+}
+
+.searchProductsBottom > p {
+  font-size: calc(14 / 16 * 1vw);
+  font-weight: 400;
+  color: rgb(75, 85, 99);
 }
