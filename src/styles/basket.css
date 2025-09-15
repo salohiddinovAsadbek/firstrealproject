@@ -73,7 +73,7 @@
   cursor: pointer;
 }
 
-.basketCard > div > input {
+.basketCard > div > p {
   width: calc(50 / 16 * 1vw);
   height: calc(26 / 16 * 1vw);
   padding-left: calc(6 / 16 * 1vw);
@@ -81,6 +81,9 @@
   border: calc(1 / 16 * 1vw) solid#e6e7eb;
   border-radius: calc(5 / 16 * 1vw);
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .deleteBtn {
@@ -94,4 +97,61 @@
 .deleteBtn > i {
   font-size: calc(16 / 16 * 1vw);
   color: #6c7280;
+}
+
+.overallPrice {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: calc(25 / 16 * 1vw);
+  box-shadow: 0 calc(2 / 16 * 1vw) calc(6 / 16 * 1vw) rgba(0, 0, 0, 0.15);
+  margin-top: calc(30 / 16 * 1vw);
+  background-color: white;
+  border-radius: calc(13 / 16 * 1vw);
+}
+
+.overallPrice > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overallPrice > div > h1 {
+  font-size: calc(20 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+}
+
+.overallPrice > div:nth-child(2) {
+  margin-top: calc(20 / 16 * 1vw);
+  border-top: calc(1 / 16 * 1vw) solid #e6e7eb;
+  padding-top: calc(20 / 16 * 1vw);
+}
+
+.overallPrice > div > p {
+  font-size: calc(20 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(37, 99, 235);
+}
+
+.verifyBtn {
+  width: 100%;
+  height: calc(40 / 16 * 1vw);
+  background-color: #16a349;
+  border: none;
+  border-radius: calc(10 / 16 * 1vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(16 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(255, 255, 255);
+  margin-top: calc(25 / 16 * 1vw);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.verifyBtn:hover {
+  background-color: #167438;
 }
