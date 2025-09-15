@@ -51,7 +51,12 @@ function SignUp() {
       >
         <div>
           <p>Ro'yhatdan o'tish</p>
-          <i className="fa-solid fa-xmark" onClick={(e) => {}}></i>
+          <i
+            className="fa-solid fa-xmark"
+            onClick={(e) => {
+              dispatch(getActiveSection(""));
+            }}
+          ></i>
         </div>
         <div className="loginForm signUpForm">
           <div>
