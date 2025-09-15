@@ -3,6 +3,8 @@ import products from "./products";
 import filterAll from "./filter";
 import writeInput from "./inputValue";
 import addToTheBasket from "./basket";
+import activeSections from "./activeSections";
+import addAnimation from "./isWaiting";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +12,7 @@ export const store = configureStore({
     filteredData: filterAll,
     inputData: writeInput,
     basketData: addToTheBasket,
+    activeData: activeSections,
+    animationData: addAnimation,
   },
 });

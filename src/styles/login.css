@@ -1,0 +1,155 @@
+.login {
+  position: absolute;
+  z-index: 14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.344);
+  top: 0;
+  left: 0;
+}
+
+.loginCard {
+  display: flex;
+  flex-direction: column;
+  padding: calc(27 / 16 * 1vw) calc(20 / 16 * 1vw);
+  background-color: white;
+  border-radius: calc(14 / 16 * 1vw);
+}
+
+.loginCard > div:first-child {
+  display: flex;
+  gap: calc(200 / 16 * 1vw);
+  align-items: center;
+}
+
+.loginCard > div:first-child > p {
+  font-size: calc(22 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+}
+
+.loginCard > div:first-child > i {
+  font-size: calc(17 / 16 * 1vw);
+  color: #6c7280;
+  cursor: pointer;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(27 / 16 * 1vw);
+}
+
+.loginForm > div > p {
+  font-size: calc(15 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(55, 65, 81);
+  font-weight: 500;
+}
+
+.loginForm > div {
+  display: flex;
+  flex-direction: column;
+  gap: calc(7 / 16 * 1vw);
+}
+
+.loginForm > div:first-child > input {
+  width: 100%;
+  height: calc(35 / 16 * 1vw);
+  border: calc(1 / 16 * 1vw) solid#e6e7eb;
+  padding-left: calc(10 / 16 * 1vw);
+  border-radius: calc(8 / 16 * 1vw);
+  font-size: calc(14 / 16 * 1vw);
+  color: #7a7a7a;
+}
+
+.loginForm label {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.loginForm label > i {
+  position: absolute;
+  right: calc(15 / 16 * 1vw);
+  top: calc(10 / 16 * 1vw);
+  color: #6c7280;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(16 / 16 * 1vw);
+}
+
+.loginForm label > i > p {
+  width: 100%;
+  height: calc(2 / 16 * 1vw);
+  background-color: #6c7280;
+  width: calc(25 / 16 * 1vw);
+  position: absolute;
+  rotate: 150deg;
+}
+
+.loginForm > div:nth-child(2) {
+  margin-top: calc(15 / 16 * 1vw);
+}
+
+.loginForm label > input {
+  width: 100%;
+  height: calc(35 / 16 * 1vw);
+  border: calc(1 / 16 * 1vw) solid#e6e7eb;
+  border-radius: calc(8 / 16 * 1vw);
+  padding-left: calc(10 / 16 * 1vw);
+  font-size: calc(14 / 16 * 1vw);
+  color: #7a7a7a;
+}
+
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(45 / 16 * 1vw);
+  background-color: var(--brand-color);
+  border: none;
+  border-radius: calc(7 / 16 * 1vw);
+  color: white;
+  font-size: calc(16 / 16 * 1vw);
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: calc(15 / 16 * 1vw);
+}
+
+.loginBtn:hover {
+  background-color: rgb(19, 65, 163);
+}
+
+.loginCard > p {
+  text-align: center;
+  margin-top: calc(20 / 16 * 1vw);
+  font-size: calc(14 / 16 * 1vw);
+  color: rgb(75, 85, 99);
+}
+
+.loginCard > p > a {
+  color: var(--brand-color);
+  text-decoration: underline !important;
+}
+
+.signUpForm > div:nth-child(3) {
+  margin-top: calc(15 / 16 * 1vw);
+}
+
+.signUpForm > div:nth-child(2) > input {
+  width: 100%;
+  height: calc(35 / 16 * 1vw);
+  border: calc(1 / 16 * 1vw) solid#e6e7eb;
+  padding-left: calc(10 / 16 * 1vw);
+  border-radius: calc(8 / 16 * 1vw);
+  font-size: calc(14 / 16 * 1vw);
+  color: #7a7a7a;
+}

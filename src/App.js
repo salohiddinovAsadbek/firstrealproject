@@ -5,6 +5,8 @@ import Basket from "./pages/Basket";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getProducts } from "./store/products";
+import UserAccount from "./pages/userAccount";
+import { addAnimation } from "./store/isWaiting";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,14 +23,18 @@ function App() {
         }));
 
         dispatch(getProducts(productsWithSoni));
+        dispatch(addAnimation(false));
       })
       .catch((err) => console.error("Error:", err));
   }, [dispatch]);
 
   return (
     <Routes>
-      <Route element={<Enter />} path="/main" index />
-      <Route element={<Basket />} path="/basket" />
+      <Route path="/" element={<Enter />}>
+        <Route path="main" element={<Enter />} />
+      </Route>
+      <Route path="/basket" element={<Basket />} />
+      <Route path="/account" element={<UserAccount />} />
     </Routes>
   );
 }

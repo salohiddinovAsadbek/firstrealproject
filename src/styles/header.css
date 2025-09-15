@@ -35,6 +35,23 @@
 .headerRight > i {
   font-size: calc(20 / 16 * 1vw);
   color: #4b5563;
+  position: relative;
+  cursor: pointer;
+}
+
+.headerRight > i > p {
+  font-size: calc(10 / 16 * 1vw);
+  color: white;
+  width: calc(18 / 16 * 1vw);
+  height: calc(18 / 16 * 1vw);
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: calc(-10 / 16 * 1vw);
+  right: calc(-10 / 16 * 1vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .headerRight > button {

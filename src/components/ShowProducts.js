@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/showproducts.css";
 import { getProducts } from "../store/products";
+import WaitAnimation from "./waitAnimation";
 
 function ShowProducts() {
   const products = useSelector((state) => state.productsData);
   const currentInput = useSelector((state) => state.inputData);
   const dispatch = useDispatch();
+  const animation = useSelector((state) => state.animationData);
 
   function AddBasket(item) {
     const newProduct = products.map((itemNew) =>
@@ -51,6 +53,8 @@ function ShowProducts() {
 
   return (
     <div className="showProducts">
+      {animation ? <WaitAnimation /> : ""}
+
       {currentInput?.length > 0
         ? products.map((item, i) => {
             if (!item.name.toLowerCase().includes(currentInput)) return null;

@@ -1,18 +1,59 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import "../styles/header.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import Login from "./login";
+import { getActiveSection } from "../store/activeSections";
+import SignUp from "./signup";
 
 function Header() {
+  const products = useSelector((state) => state.productsData);
+  const [howMany, setHowMany] = useState(0);
+  const navigate = useNavigate();
+  const activeSection = useSelector((state) => state.activeData);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let many = 0;
+
+    products.map((item) => {
+      if (item.soni > 0) {
+        many += 1;
+      }
+      return null;
+    });
+
+    setHowMany(many);
+  }, [products]);
+
   return (
     <div className="header">
-      <NavLink to="/main">
+      <NavLink to="/">
         <img src={Logo} alt="mainLogo" />
         <p>UMA OIL</p>
       </NavLink>
       <div className="headerRight">
-        <i className="fa-solid fa-cart-shopping"></i>
-        <button className="enter">Kirish</button>
+        <i
+          className="fa-solid fa-cart-shopping"
+          onClick={() => {
+            navigate("/basket");
+          }}
+        >
+          <p style={{ display: howMany === 0 ? "none" : "flex" }}>{howMany}</p>
+        </i>
+        <button
+          className="enter"
+          onClick={() => {
+            dispatch(getActiveSection("login"));
+          }}
+        >
+          Kirish
+        </button>
       </div>
+
+      {activeSection === "login" ? <Login /> : ""}
+      {activeSection === "signup" ? <SignUp /> : ""}
     </div>
   );
 }
