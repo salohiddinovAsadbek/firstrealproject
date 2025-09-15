@@ -23,7 +23,7 @@ function App() {
         dispatch(getProducts(productsWithSoni));
       })
       .catch((err) => console.error("Error:", err));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
