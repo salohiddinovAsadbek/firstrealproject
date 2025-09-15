@@ -16,6 +16,8 @@ function Basket() {
       if (item.soni > 0) {
         total += item.soni * item.salePrice;
       }
+
+      return null;
     });
 
     setOverallPrice(total);
@@ -30,7 +32,7 @@ function Basket() {
           <h1>Savat</h1>
           <div className="basketWrapperProducts">
             {products?.map((item, i) => {
-              if (!item.soni > 0) return;
+              if (!item.soni > 0) return null;
               return (
                 <div
                   className="basketCard"

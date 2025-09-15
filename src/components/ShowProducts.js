@@ -53,7 +53,7 @@ function ShowProducts() {
     <div className="showProducts">
       {currentInput?.length > 0
         ? products.map((item, i) => {
-            if (!item.name.toLowerCase().includes(currentInput)) return;
+            if (!item.name.toLowerCase().includes(currentInput)) return null;
             return (
               <div className="showProductsCard" key={`${item.branch._id}+${i}`}>
                 <img
