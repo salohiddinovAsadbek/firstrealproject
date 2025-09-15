@@ -4,9 +4,10 @@ import ShowProducts from "./ShowProducts";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../store/products";
 import { addFilter } from "../store/filter";
+import { writeInput } from "../store/inputValue";
 
 function MainProducts() {
-  const dispatch = useDispatch("");
+  const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
   const [currency, setCurrency] = useState("all");
   const data = useSelector((state) => state.productsData);
@@ -15,20 +16,27 @@ function MainProducts() {
   useEffect(() => {
     fetch("https://umaoil.up.railway.app/api/products")
       .then((res) => res.json())
-      .then((data) => {
-        dispatch(getProducts(data));
+      .then((data1) => {
+        console.log(data1.data);
+
+        const productsWithSoni = data1?.data.map((item) => ({
+          ...item,
+          soni: 0,
+        }));
+
+        dispatch(getProducts(productsWithSoni));
       })
       .catch((err) => console.error("Error:", err));
   }, []);
 
-  function Filter() {
+  function Filter(value, currency) {
     let data2 = [];
 
     for (let i = 0; i < data?.length; i++) {
       const product = data[i];
       const matchesName = product.name
         .toLowerCase()
-        .includes(searchName.toLowerCase());
+        .includes(value.toLowerCase());
       const matchesCurrency =
         currency === "all" ? true : product.currency === currency;
 
@@ -42,7 +50,8 @@ function MainProducts() {
 
   useEffect(() => {
     console.log(filteredData);
-  }, [filteredData]);
+    console.log(data);
+  }, [searchName]);
 
   return (
     <div className="mainProducts">
@@ -61,7 +70,8 @@ function MainProducts() {
                 value={searchName}
                 onChange={(e) => {
                   setSearchName(e.target.value);
-                  Filter();
+                  dispatch(writeInput(e.target.value));
+                  Filter(e.target.value, currency);
                 }}
               />
             </label>
@@ -71,7 +81,7 @@ function MainProducts() {
               className="currency"
               onChange={(e) => {
                 setCurrency(e.target.value);
-                Filter();
+                Filter(searchName, e.target.value);
               }}
             >
               <option value="all">Barcha valyutalar</option>

@@ -1,0 +1,97 @@
+.basketWrapper {
+  position: absolute;
+  padding-top: calc(90 / 16 * 1vw);
+  padding-left: calc(270 / 16 * 1vw);
+  width: 100%;
+  padding-right: calc(20 / 16 * 1vw);
+  padding-bottom: calc(30 / 16 * 1vw);
+  background-color: #f9fafb;
+  height: 100%;
+}
+
+.basketWrapper > h1 {
+  font-size: calc(24 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(17, 24, 39);
+  font-weight: 700;
+}
+
+.basketWrapperProducts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  margin-top: calc(25 / 16 * 1vw);
+  border-radius: calc(10 / 16 * 1vw);
+  box-shadow: 0 calc(2 / 16 * 1vw) calc(6 / 16 * 1vw) rgba(0, 0, 0, 0.15);
+}
+
+.basketCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(20 / 16 * 1vw) calc(15 / 16 * 1vw);
+  padding-right: calc(25 / 16 * 1vw);
+}
+
+.basketCard > p {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6 / 16 * 1vw);
+}
+
+.basketCard > p > span:first-child {
+  font-size: calc(16 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+}
+
+.basketCard > p > span:last-child {
+  font-size: calc(17 / 16 * 1vw);
+  line-height: 100%;
+  color: rgb(37, 99, 235);
+  font-weight: 600;
+}
+
+.basketCard > div {
+  display: flex;
+  gap: calc(12 / 16 * 1vw);
+  align-items: center;
+}
+
+.functionalBtn {
+  background-color: inherit;
+  border: none;
+  padding: calc(10 / 16 * 1vw);
+  font-size: calc(20 / 16 * 1vw);
+  color: #9da1ab;
+}
+
+.basketCard > div > button {
+  cursor: pointer;
+}
+
+.basketCard > div > input {
+  width: calc(50 / 16 * 1vw);
+  height: calc(26 / 16 * 1vw);
+  padding-left: calc(6 / 16 * 1vw);
+  font-size: calc(16 / 16 * 1vw);
+  border: calc(1 / 16 * 1vw) solid#e6e7eb;
+  border-radius: calc(5 / 16 * 1vw);
+  font-weight: 500;
+}
+
+.deleteBtn {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.deleteBtn > i {
+  font-size: calc(16 / 16 * 1vw);
+  color: #6c7280;
+}

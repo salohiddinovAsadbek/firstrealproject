@@ -5,7 +5,9 @@ const products = createSlice({
   initialState: [],
   reducers: {
     getProducts: (state, action) => {
-      return action.payload.data;
+      console.log(action.payload);
+
+      return action.payload;
     },
   },
 });

@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const inputValue = createSlice({
   name: "inputName",
-  initialState: null,
-  reducer: {
+  initialState: "",
+  reducers: {
     writeInput: (state, action) => {
       return action.payload;
     },

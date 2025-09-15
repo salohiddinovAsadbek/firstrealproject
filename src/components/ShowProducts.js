@@ -1,19 +1,59 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "../styles/showproducts.css";
-import { useEffect } from "react";
+import { getProducts } from "../store/products";
 
 function ShowProducts() {
-  let products = useSelector((state) => state.productsData);
+  const products = useSelector((state) => state.productsData);
   const filtered = useSelector((state) => state.filteredData);
   const currentInput = useSelector((state) => state.inputData);
+  const dispatch = useDispatch();
+  const basketData = useSelector((state) => state.basketData);
 
-  useEffect(() => {}, [filtered]);
+  function AddBasket(item) {
+    const newProduct = products.map((itemNew) =>
+      itemNew._id === item._id ? { ...itemNew, soni: 1 } : itemNew
+    );
 
-  const showWhat = currentInput?.length > 0 ? true : false;
+    console.log(newProduct);
+
+    dispatch(getProducts(newProduct));
+  }
+
+  function IncOrDec(type, item) {
+    let newproduct = [];
+
+    if (type === "increment") {
+      newproduct = products.map((newitem) =>
+        newitem._id === item._id
+          ? { ...newitem, soni: newitem.soni + 1 }
+          : newitem
+      );
+
+      dispatch(getProducts(newproduct));
+    }
+
+    if (type === "decrement") {
+      newproduct = products.map((newitem) =>
+        newitem._id === item._id
+          ? { ...newitem, soni: newitem.soni - 1 }
+          : newitem
+      );
+
+      dispatch(getProducts(newproduct));
+    }
+
+    if (type === "delete") {
+      newproduct = products.map((newitem) =>
+        newitem._id === item._id ? { ...newitem, soni: 0 } : newitem
+      );
+
+      dispatch(getProducts(newproduct));
+    }
+  }
 
   return (
     <div className="showProducts">
-      {showWhat
+      {currentInput?.length > 0
         ? filtered.map((item, i) => {
             return (
               <div className="showProductsCard" key={`${item.branch._id}+${i}`}>
@@ -25,14 +65,18 @@ function ShowProducts() {
                 <h1>{item?.name}</h1>
                 <p>{item?.description}</p>
                 <p>{item?.salePrice} UZS</p>
-                <button className="intoBasket">
+                <button className="intoBasket" onClick={() => {}}>
                   <i className="fa-solid fa-cart-shopping"></i>
                   <p>Savatga</p>
                 </button>
               </div>
             );
           })
-        : products.map((item, i) => {
+        : ""}
+
+      {currentInput?.length === 0
+        ? products.map((item, i) => {
+            console.log(item.soni);
             return (
               <div className="showProductsCard" key={`${item.branch._id}+${i}`}>
                 <img
@@ -43,13 +87,50 @@ function ShowProducts() {
                 <h1>{item?.name}</h1>
                 <p>{item?.description}</p>
                 <p>{item?.salePrice} UZS</p>
-                <button className="intoBasket">
-                  <i className="fa-solid fa-cart-shopping"></i>
-                  <p>Savatga</p>
-                </button>
+
+                {item?.soni > 0 ? (
+                  <div className="showProductCardFunction">
+                    <button
+                      className="showProductFunctionalBtn"
+                      onClick={() => {
+                        IncOrDec("decrement", item);
+                      }}
+                    >
+                      -
+                    </button>
+                    <p>{item.soni}</p>
+                    <button
+                      className="showProductFunctionalBtn"
+                      onClick={() => {
+                        IncOrDec("increment", item);
+                      }}
+                    >
+                      +
+                    </button>
+                    <button
+                      className="showProductdeleteBtn"
+                      onClick={() => {
+                        IncOrDec("delete", item);
+                      }}
+                    >
+                      <i className="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    className="intoBasket"
+                    onClick={() => {
+                      AddBasket(item);
+                    }}
+                  >
+                    <i className="fa-solid fa-cart-shopping"></i>
+                    <p>Savatga</p>
+                  </button>
+                )}
               </div>
             );
-          })}
+          })
+        : ""}
     </div>
   );
 }

@@ -5,12 +5,7 @@ const filterAll = createSlice({
   initialState: [],
   reducers: {
     addFilter: (state, action) => {
-      const exists = state?.some((item) => item.id === action.payload.id);
-      if (!exists) {
-        state.push(action.payload);
-      } else {
-        console.log("Product already in cart");
-      }
+      return action.payload;
     },
   },
 });
