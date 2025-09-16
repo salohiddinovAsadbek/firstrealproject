@@ -1,4 +1,4 @@
-import { data, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Enter from "./pages/Enter";
 import "./styles/style.css";
 import Basket from "./pages/Basket";
