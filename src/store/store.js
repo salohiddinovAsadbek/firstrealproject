@@ -5,6 +5,7 @@ import writeInput from "./inputValue";
 import addToTheBasket from "./basket";
 import activeSections from "./activeSections";
 import addAnimation from "./isWaiting";
+import isUserEntered from "./isUserEntered";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     basketData: addToTheBasket,
     activeData: activeSections,
     animationData: addAnimation,
+    userData: isUserEntered,
   },
 });

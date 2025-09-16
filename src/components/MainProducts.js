@@ -2,6 +2,7 @@ import "../styles/mainProducts.css";
 import ShowProducts from "./ShowProducts";
 import { useDispatch, useSelector } from "react-redux";
 import { doCurrency, writeInput } from "../store/inputValue";
+import ProductNumberMove from "./productNumberMove";
 
 function MainProducts() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function MainProducts() {
         </div>
       </div>
       <ShowProducts />
+      <ProductNumberMove />
     </div>
   );
 }

@@ -64,6 +64,7 @@
   font-size: calc(14 / 16 * 1vw);
   line-height: 100%;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .menuBar {

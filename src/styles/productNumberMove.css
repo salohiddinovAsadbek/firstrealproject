@@ -1,0 +1,42 @@
+.productMove {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(20 / 16 * 1vw) calc(20 / 16 * 1vw);
+  margin-top: calc(25 / 16 * 1vw);
+  border: none;
+  border-radius: calc(10 / 16 * 1vw);
+  background-color: white;
+  box-shadow: 0 calc(2 / 16 * 1vw) calc(6 / 16 * 1vw) rgba(0, 0, 0, 0.15);
+}
+
+.productMove > button {
+  background-color: var(--brand-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: calc(8 / 16 * 1vw);
+  padding: calc(10 / 16 * 1vw) calc(15 / 16 * 1vw);
+  font-size: calc(17 / 16 * 1vw);
+  color: white;
+}
+
+.productMoveCenter {
+  display: flex;
+  gap: calc(20 / 16 * 1vw);
+  align-items: center;
+}
+
+.productMoveCenter > div {
+  display: flex;
+  gap: calc(15 / 16 * 1vw);
+  align-items: center;
+}
+
+.productMoveCenter select {
+  width: calc(100 / 16 * 1vw);
+  height: calc(37 / 16 * 1vw);
+  padding-left: calc(10 / 16 * 1vw);
+  font-size: calc(17 / 16 * 1vw);
+}

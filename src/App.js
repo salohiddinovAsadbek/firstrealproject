@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("https://umaoil.up.railway.app/api/products?page=1&limit=1000")
+    fetch("https://umaoil.up.railway.app/api/products?page=1&limit=10")
       .then((res) => res.json())
       .then((data1) => {
         const productsWithSoni = data1?.data.map((item) => ({
@@ -29,9 +29,7 @@ function App() {
   useEffect(() => {
     fetch("https://umaoil.up.railway.app/api/clients")
       .then((res) => res.json())
-      .then((data1) => {
-        console.log(data1);
-      })
+      .then((data1) => {})
       .catch((err) => console.error("Error:", err));
   }, [dispatch]);
 

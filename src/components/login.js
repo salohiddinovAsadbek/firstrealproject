@@ -35,11 +35,23 @@ function Login() {
     setPhoneNumber(formatted);
   }
 
-  function GetUser() {
-    fetch("https://umaoil.up.railway.app/api/clients")
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.error(err));
+  function CheckUser() {
+    fetch("https://umaoil.up.railway.app/api/clients/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ phone: phoneNumber, password: password }),
+    })
+      .then((data) => {
+        if (data.status === 200) {
+          return data.json();
+        }
+      })
+      .then((res) => {
+        localStorage.setItem("token", res.token);
+        console.log(res, res.token);
+      });
   }
 
   return (
@@ -100,7 +112,7 @@ function Login() {
           <button
             className="loginBtn"
             onClick={() => {
-              GetUser();
+              CheckUser();
             }}
           >
             Kirish
