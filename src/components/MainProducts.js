@@ -1,7 +1,7 @@
 import "../styles/mainProducts.css";
 import ShowProducts from "./ShowProducts";
 import { useDispatch, useSelector } from "react-redux";
-import { writeInput } from "../store/inputValue";
+import { doCurrency, writeInput } from "../store/inputValue";
 
 function MainProducts() {
   const dispatch = useDispatch();
@@ -21,14 +21,20 @@ function MainProducts() {
                 type="text"
                 id="search"
                 placeholder="Mahsulot nomi bilan qidirish..."
-                value={currentInput}
+                value={currentInput.input}
                 onChange={(e) => {
                   dispatch(writeInput(e.target.value));
                 }}
               />
             </label>
 
-            <select name="currency" className="currency" onChange={(e) => {}}>
+            <select
+              name="currency"
+              className="currency"
+              onChange={(e) => {
+                dispatch(doCurrency(e.target.value));
+              }}
+            >
               <option value="all">Barcha valyutalar</option>
               <option value="UZS">UZS</option>
               <option value="USD">USD</option>

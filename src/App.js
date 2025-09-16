@@ -15,8 +15,6 @@ function App() {
     fetch("https://umaoil.up.railway.app/api/products?page=1&limit=1000")
       .then((res) => res.json())
       .then((data1) => {
-        console.log(data1.data);
-
         const productsWithSoni = data1?.data.map((item) => ({
           ...item,
           soni: 0,

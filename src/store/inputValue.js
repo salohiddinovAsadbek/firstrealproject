@@ -2,13 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const inputValue = createSlice({
   name: "inputName",
-  initialState: "",
+  initialState: {
+    input: "",
+    currency: "",
+  },
   reducers: {
     writeInput: (state, action) => {
-      return action.payload;
+      return { ...state, input: action.payload };
+    },
+    doCurrency: (state, action) => {
+      return { ...state, currency: action.payload };
     },
   },
 });
 
-export const { writeInput } = inputValue.actions;
+export const { writeInput, doCurrency } = inputValue.actions;
 export default inputValue.reducer;
