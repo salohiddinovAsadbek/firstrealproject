@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { data, Route, Routes } from "react-router-dom";
 import Enter from "./pages/Enter";
 import "./styles/style.css";
 import Basket from "./pages/Basket";
@@ -22,6 +22,15 @@ function App() {
 
         dispatch(getProducts(productsWithSoni));
         dispatch(addAnimation(false));
+      })
+      .catch((err) => console.error("Error:", err));
+  }, [dispatch]);
+
+  useEffect(() => {
+    fetch("https://umaoil.up.railway.app/api/clients")
+      .then((res) => res.json())
+      .then((data1) => {
+        console.log(data1);
       })
       .catch((err) => console.error("Error:", err));
   }, [dispatch]);

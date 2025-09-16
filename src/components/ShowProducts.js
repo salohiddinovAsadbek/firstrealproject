@@ -44,7 +44,6 @@ function ShowProducts() {
     dispatch(getProducts(newproduct));
   }
 
-  // 🔹 Oldindan filter qilamiz
   const filteredProducts = products.filter((item) => {
     if (
       currentInput?.input &&

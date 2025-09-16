@@ -25,3 +25,39 @@
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .waitAnimationCard {
+    border: calc(4 / 10.24 * 1vw) solid #f3f3f3;
+    border-top: calc(4 / 10.24 * 1vw) solid #3498db;
+    border-radius: 50%;
+    width: calc(30 / 10.24 * 1vw) !important;
+    height: calc(30 / 10.24 * 1vw) !important;
+    animation: spin 1s linear infinite;
+    margin: calc(10 / 10.24 * 1vw);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .waitAnimationCard {
+    border: calc(4 / 7.68 * 1vw) solid #f3f3f3;
+    border-top: calc(4 / 7.68 * 1vw) solid #3498db;
+    border-radius: 50%;
+    width: calc(30 / 7.68 * 1vw) !important;
+    height: calc(30 / 7.68 * 1vw) !important;
+    animation: spin 1s linear infinite;
+    margin: calc(10 / 7.68 * 1vw);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .waitAnimationCard {
+    border: calc(4 / 4.8 * 1vw) solid #f3f3f3;
+    border-top: calc(4 / 4.8 * 1vw) solid #3498db;
+    border-radius: 50%;
+    width: calc(30 / 4.8 * 1vw) !important;
+    height: calc(30 / 4.8 * 1vw) !important;
+    animation: spin 1s linear infinite;
+    margin: calc(10 / 4.8 * 1vw);
+  }
+}
