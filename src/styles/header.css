@@ -15,13 +15,13 @@
   height: calc(40 / 16 * 1vw);
 }
 
-.header > a {
+.header a {
   display: flex;
   gap: calc(20 / 16 * 1vw);
   align-items: center;
 }
 
-.header > a > p {
+.header a > p {
   font-size: calc(24 / 16 * 1vw);
   color: var(--brand-color);
 }
@@ -64,4 +64,99 @@
   font-size: calc(14 / 16 * 1vw);
   line-height: 100%;
   font-weight: 400;
+}
+
+.menuBar {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(14 / 10.24 * 1vw) calc(40 / 10.24 * 1vw);
+    background-color: white;
+    box-shadow: 0 calc(2 / 10.24 * 1vw) calc(6 / 10.24 * 1vw)
+      rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  .header img {
+    width: calc(40 / 10.24 * 1vw);
+    height: calc(40 / 10.24 * 1vw);
+  }
+
+  .header a {
+    display: flex;
+    gap: calc(20 / 10.24 * 1vw);
+    align-items: center;
+  }
+
+  .header a > p {
+    font-size: calc(24 / 10.24 * 1vw);
+    color: var(--brand-color);
+  }
+
+  .headerRight {
+    display: flex;
+    gap: calc(20 / 10.24 * 1vw);
+    align-items: center;
+  }
+
+  .headerRight > i {
+    font-size: calc(20 / 10.24 * 1vw);
+    color: #4b5563;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .headerRight > i > p {
+    font-size: calc(10 / 10.24 * 1vw);
+    color: white;
+    width: calc(18 / 10.24 * 1vw);
+    height: calc(18 / 10.24 * 1vw);
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: calc(-10 / 10.24 * 1vw);
+    right: calc(-10 / 10.24 * 1vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerRight > button {
+    width: calc(65 / 10.24 * 1vw);
+    height: calc(35 / 10.24 * 1vw);
+    background-color: #2663eb;
+    border: none;
+    border-radius: calc(7 / 10.24 * 1vw);
+    color: white;
+    font-size: calc(14 / 10.24 * 1vw);
+    line-height: 100%;
+    font-weight: 400;
+  }
+
+  .menuBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: inherit;
+  }
+
+  .menuBar > i {
+    font-size: calc(35 / 10.24 * 1vw);
+    color: #4b5563;
+  }
+
+  .header > div:first-child {
+    display: flex;
+    gap: calc(35 / 10.24 * 1vw);
+    align-items: center;
+  }
 }

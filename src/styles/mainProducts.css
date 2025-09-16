@@ -86,3 +86,97 @@
   font-weight: 400;
   color: rgb(75, 85, 99);
 }
+
+@media only screen and (max-width: 1024px) {
+  .mainProducts {
+    position: absolute;
+    padding-top: calc(83 / 10.24 * 1vw);
+    padding-left: calc(22 / 10.24 * 1vw);
+    background-color: #f9fafb;
+    width: 100%;
+    height: 100%;
+    padding-right: calc(22 / 10.24 * 1vw);
+  }
+
+  .searchProducts {
+    display: flex;
+    flex-direction: column;
+    gap: calc(15 / 10.24 * 1vw);
+    padding: calc(17 / 10.24 * 1vw);
+    margin-top: calc(25 / 10.24 * 1vw);
+    border: none;
+    border-radius: calc(10 / 10.24 * 1vw);
+    background-color: white;
+    box-shadow: 0 calc(6 / 10.24 * 1vw) calc(10 / 10.24 * 1vw)
+      rgba(0, 0, 0, 0.15);
+  }
+
+  .mainProducts > h1 {
+    font-size: calc(24 / 10.24 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 700;
+  }
+
+  .searchProductsTop {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchProductsTop > p {
+    font-size: calc(18 / 10.24 * 1vw);
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+  }
+
+  .searchProductsTop > div {
+    display: flex;
+    margin-top: calc(5 / 10.24 * 1vw);
+    gap: calc(15 / 10.24 * 1vw);
+    flex-direction: column;
+  }
+
+  .searchProductsTop > div > label {
+    position: relative;
+    width: calc(780 / 10.24 * 1vw);
+    width: 100%;
+    height: calc(38 / 10.24 * 1vw);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searchProductsTop > div > label > i {
+    position: absolute;
+    left: calc(15 / 10.24 * 1vw);
+    top: calc(10 / 10.24 * 1vw);
+    color: #a4aab5;
+    font-size: calc(17 / 10.24 * 1vw);
+  }
+
+  .searchProductsTop > div > label > input {
+    padding-left: calc(40 / 10.24 * 1vw);
+    width: 100%;
+    height: 100%;
+    border: calc(1 / 10.24 * 1vw) solid#d1d5db;
+    border-radius: calc(8 / 10.24 * 1vw);
+    font-size: calc(18 / 10.24 * 1vw);
+    color: #9da3af;
+    padding-right: calc(15 / 10.24 * 1vw);
+  }
+
+  .searchProductsTop > div > select {
+    border: calc(1 / 10.24 * 1vw) solid #d1d5db;
+    border-radius: calc(10 / 10.24 * 1vw);
+    padding: calc(10 / 10.24 * 1vw);
+  }
+
+  .searchProductsTop > div > select {
+    font-size: calc(16 / 10.24 * 1vw);
+    height: 100%;
+  }
+
+  .searchProductsBottom > p {
+    font-size: calc(16 / 10.24 * 1vw);
+  }
+}

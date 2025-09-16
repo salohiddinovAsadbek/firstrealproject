@@ -29,10 +29,20 @@ function Header() {
 
   return (
     <div className="header">
-      <NavLink to="/">
-        <img src={Logo} alt="mainLogo" />
-        <p>UMA OIL</p>
-      </NavLink>
+      <div>
+        <button
+          className="menuBar"
+          onClick={() => {
+            dispatch(getActiveSection("menuBar"));
+          }}
+        >
+          <i className="fa-solid fa-bars"></i>
+        </button>
+        <NavLink to="/">
+          <img src={Logo} alt="mainLogo" />
+          <p>UMA OIL</p>
+        </NavLink>
+      </div>
       <div className="headerRight">
         <i
           className="fa-solid fa-cart-shopping"

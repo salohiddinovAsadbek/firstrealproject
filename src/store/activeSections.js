@@ -7,6 +7,11 @@ const activeSection = createSlice({
     getActiveSection: (state, action) => {
       return action.payload;
     },
+    getActiveBar: (state, action) => {
+      console.log(action.payload);
+
+      return action.payload;
+    },
   },
 });
 

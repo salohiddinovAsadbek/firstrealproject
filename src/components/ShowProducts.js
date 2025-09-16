@@ -14,8 +14,6 @@ function ShowProducts() {
       itemNew._id === item._id ? { ...itemNew, soni: 1 } : itemNew
     );
 
-    console.log(newProduct);
-
     dispatch(getProducts(newProduct));
   }
 
@@ -117,11 +115,15 @@ function ShowProducts() {
         ? products.map((item, i) => {
             return (
               <div className="showProductsCard" key={`${item.branch._id}+${i}`}>
-                <img
-                  src={item?.images[0]?.fileURL}
-                  alt={`${item.description}`}
-                  height={170}
-                />
+                {item.images[0]?.fileURL ? (
+                  <img
+                    src={item?.images[0]?.fileURL}
+                    alt={`${item.description}`}
+                    height={170}
+                  />
+                ) : (
+                  <p className="imgDefault">{item.description}</p>
+                )}
                 <h1>{item?.name}</h1>
                 <p>{item?.description}</p>
                 <p>{item?.salePrice} UZS</p>
