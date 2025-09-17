@@ -40,3 +40,24 @@
   padding-left: calc(10 / 16 * 1vw);
   font-size: calc(17 / 16 * 1vw);
 }
+
+.productMoveCenter > div > p {
+  font-size: calc(16 / 16 * 1vw);
+  color: rgb(75, 85, 99);
+  font-weight: 400;
+}
+
+.productMoveCenter > div > input {
+  font-size: calc(18 / 16 * 1vw);
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  width: calc(60 / 16 * 1vw);
+  height: calc(30 / 16 * 1vw);
+  text-align: center;
+}
+
+.productMoveCenter > div > input::placeholder {
+  font-size: calc(18 / 16 * 1vw);
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+}

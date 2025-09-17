@@ -28,7 +28,7 @@
 
 .headerRight {
   display: flex;
-  gap: calc(20 / 16 * 1vw);
+  gap: calc(25 / 16 * 1vw);
   align-items: center;
 }
 
@@ -69,6 +69,24 @@
 
 .menuBar {
   display: none;
+}
+
+/* media qoshildi  */
+
+.enteredStateAccount {
+  display: flex;
+  gap: calc(25 / 16 * 1vw);
+  align-items: center;
+}
+
+.enteredStateAccount > i {
+  font-size: calc(17 / 16 * 1vw);
+  color: #374151;
+  cursor: pointer;
+}
+
+.enteredStateAccount > i:last-child:hover {
+  color: red;
 }
 
 @media only screen and (max-width: 1024px) {

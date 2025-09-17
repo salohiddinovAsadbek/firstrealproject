@@ -6,6 +6,7 @@ import addToTheBasket from "./basket";
 import activeSections from "./activeSections";
 import addAnimation from "./isWaiting";
 import isUserEntered from "./isUserEntered";
+import getDataCount from "./pagesCountData";
 
 export const store = configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
     activeData: activeSections,
     animationData: addAnimation,
     userData: isUserEntered,
+    pageData: getDataCount,
   },
 });

@@ -3,10 +3,11 @@ import MainProducts from "../components/MainProducts";
 import Navigation from "../components/Navigation";
 import "../styles/enter.css";
 
-function Enter() {
+function Enter({ authenticated }) {
   return (
     <div>
       <Header />
+      <div>{authenticated}</div>
       <div className="enter">
         <Navigation />
         <MainProducts />

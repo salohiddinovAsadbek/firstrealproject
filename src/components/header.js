@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Login from "./login";
 import { getActiveSection } from "../store/activeSections";
 import SignUp from "./signup";
+import { getUserActivate } from "../store/isUserEntered";
 
 function Header() {
   const products = useSelector((state) => state.productsData);
@@ -13,6 +14,7 @@ function Header() {
   const navigate = useNavigate();
   const activeSection = useSelector((state) => state.activeData);
   const dispatch = useDispatch();
+  const isUserActivated = useSelector((state) => state.userData);
 
   useEffect(() => {
     let many = 0;
@@ -52,14 +54,32 @@ function Header() {
         >
           <p style={{ display: howMany === 0 ? "none" : "flex" }}>{howMany}</p>
         </i>
-        <button
-          className="enter"
-          onClick={() => {
-            dispatch(getActiveSection("login"));
-          }}
-        >
-          Kirish
-        </button>
+        {isUserActivated ? (
+          <div className="enteredStateAccount">
+            <i
+              className="fa-regular fa-user"
+              onClick={() => {
+                navigate("/account");
+              }}
+            ></i>
+            <i
+              className="fa-solid fa-arrow-right-from-bracket"
+              onClick={() => {
+                localStorage.clear();
+                dispatch(getUserActivate(false));
+              }}
+            ></i>
+          </div>
+        ) : (
+          <button
+            className="enter"
+            onClick={() => {
+              dispatch(getActiveSection("login"));
+            }}
+          >
+            Kirish
+          </button>
+        )}
       </div>
 
       {activeSection === "login" ? <Login /> : ""}

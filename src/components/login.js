@@ -3,6 +3,7 @@ import "../styles/login.css";
 import { useDispatch } from "react-redux";
 import { getActiveSection } from "../store/activeSections";
 import { useState } from "react";
+import { getUserActivate } from "../store/isUserEntered";
 
 function Login() {
   const dispatch = useDispatch();
@@ -35,23 +36,36 @@ function Login() {
     setPhoneNumber(formatted);
   }
 
-  function CheckUser() {
-    fetch("https://umaoil.up.railway.app/api/clients/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ phone: phoneNumber, password: password }),
-    })
-      .then((data) => {
-        if (data.status === 200) {
-          return data.json();
+  async function CheckUser() {
+    try {
+      const res = await fetch(
+        "https://umaoil.up.railway.app/api/clients/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ phone: phoneNumber, password: password }),
         }
-      })
-      .then((res) => {
-        localStorage.setItem("token", res.token);
-        console.log(res, res.token);
-      });
+      );
+
+      if (!res.ok) {
+        console.log("Login failed:", res.status);
+        return;
+      }
+
+      const data = await res.json();
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("id", data.client._id);
+
+      console.log("Login success:", data.token);
+
+      dispatch(getUserActivate(true));
+      dispatch(getActiveSection(""));
+    } catch (err) {
+      console.log("Network error:", err);
+    }
   }
 
   return (

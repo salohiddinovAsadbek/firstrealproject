@@ -8,6 +8,7 @@ function ShowProducts() {
   const currentInput = useSelector((state) => state.inputData);
   const dispatch = useDispatch();
   const animation = useSelector((state) => state.animationData);
+  const pageData = useSelector((state) => state.pageData);
 
   function AddBasket(item) {
     const newProduct = products.map((itemNew) =>
@@ -44,7 +45,7 @@ function ShowProducts() {
     dispatch(getProducts(newproduct));
   }
 
-  const filteredProducts = products.filter((item) => {
+  let filteredProducts = products.filter((item) => {
     if (
       currentInput?.input &&
       !item.name.toLowerCase().includes(currentInput.input.toLowerCase())
@@ -61,11 +62,16 @@ function ShowProducts() {
     return true;
   });
 
+  const newArr = filteredProducts.slice(
+    (pageData.page - 1) * Number(pageData.perPage),
+    (pageData.page - 1) * Number(pageData.perPage) + Number(pageData.perPage)
+  );
+
   return (
     <div className="showProducts">
       {animation && <WaitAnimation />}
 
-      {filteredProducts.map((item, i) => (
+      {newArr.map((item, i) => (
         <div className="showProductsCard" key={`${item.branch._id}+${i}`}>
           {item.images[0]?.fileURL ? (
             <img

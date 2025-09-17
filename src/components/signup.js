@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getActiveSection } from "../store/activeSections";
 import "../styles/login.css";
+import { getUserActivate } from "../store/isUserEntered";
 
 function SignUp() {
   const [isHide, setHide] = useState(false);
@@ -34,6 +35,43 @@ function SignUp() {
     }
 
     setPhoneNumber(formatted);
+  }
+
+  async function SignUpUser() {
+    try {
+      const res = await fetch("https://umaoil.up.railway.app/api/clients", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: name,
+          phone: phoneNumber,
+          password: password,
+          birthday: "2025-09-17",
+          branch: "6877dd28939ecd40fa5fc930",
+          isVip: false,
+          notes: "New user",
+          cars: [],
+        }),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        console.log(
+          "Signup error:",
+          errData?.errors?.[0]?.msg || "Signup failed"
+        );
+        return;
+      }
+
+      const data = await res.json();
+      console.log("Signup success:", data);
+      console.log(password);
+
+      dispatch(getUserActivate(true));
+      localStorage.setItem("id", data._id);
+    } catch (err) {
+      console.log("Network error:", err);
+    }
   }
 
   return (
@@ -103,7 +141,14 @@ function SignUp() {
               </i>
             </label>
           </div>
-          <button className="loginBtn">Kirish</button>
+          <button
+            className="loginBtn"
+            onClick={() => {
+              SignUpUser();
+            }}
+          >
+            Ro'yhatdan o'tish
+          </button>
         </div>
         <p>
           Allaqachon hisobingiz bormi? &nbsp;
