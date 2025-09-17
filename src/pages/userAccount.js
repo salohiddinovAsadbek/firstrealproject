@@ -5,7 +5,6 @@ import "../styles/account.css";
 
 function UserAccount() {
   const isUserActivated = useSelector((state) => state.userData);
-  const userDataAll = useSelector((state) => state.userDataAll);
 
   return (
     <div className="account">
