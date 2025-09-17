@@ -21,7 +21,7 @@ function App() {
       .then((data1) => {
         const productsWithSoni = data1?.data.map((item) => ({
           ...item,
-          soni: 0,
+          quantity: 0,
         }));
 
         dispatch(getProducts(productsWithSoni));
@@ -51,9 +51,9 @@ function App() {
         .catch((err) => console.error(err));
     }
 
-    // fetch("https://umaoil.up.railway.app/api/clients")
-    //   .then((res) => res.json())
-    //   .then((data) => console.log(data));
+    fetch("https://umaoil.up.railway.app/api/clients")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   }, [dispatch]);
 
   useEffect(() => {

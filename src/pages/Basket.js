@@ -15,8 +15,8 @@ function Basket() {
   useEffect(() => {
     let total = 0;
     products.map((item) => {
-      if (item.soni > 0) {
-        total += item.soni * item.salePrice;
+      if (item.quantity > 0) {
+        total += item.quantity * item.salePrice;
       }
 
       return null;
@@ -53,7 +53,7 @@ function Basket() {
             <div>
               <div className="basketWrapperProducts">
                 {products?.map((item, i) => {
-                  if (!item.soni > 0) return null;
+                  if (!item.quantity > 0) return null;
                   return (
                     <div
                       className="basketCard"
@@ -71,7 +71,7 @@ function Basket() {
                           onClick={() => {
                             const newProduct = products.map((newitem) => {
                               return newitem._id === item._id
-                                ? { ...newitem, soni: newitem.soni - 1 }
+                                ? { ...newitem, quantity: newitem.quantity - 1 }
                                 : newitem;
                             });
 
@@ -80,13 +80,13 @@ function Basket() {
                         >
                           -
                         </button>
-                        <p>{item.soni}</p>
+                        <p>{item.quantity}</p>
                         <button
                           className="functionalBtn"
                           onClick={() => {
                             const newProduct = products.map((newitem) => {
                               return newitem._id === item._id
-                                ? { ...newitem, soni: newitem.soni + 1 }
+                                ? { ...newitem, quantity: newitem.quantity + 1 }
                                 : newitem;
                             });
 
@@ -100,7 +100,7 @@ function Basket() {
                           onClick={() => {
                             const newProduct = products.map((newitem) => {
                               return newitem._id === item._id
-                                ? { ...newitem, soni: 0 }
+                                ? { ...newitem, quantity: 0 }
                                 : newitem;
                             });
 

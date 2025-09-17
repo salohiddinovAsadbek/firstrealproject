@@ -21,7 +21,7 @@ function Header() {
     let many = 0;
 
     products.map((item) => {
-      if (item.soni > 0) {
+      if (item.quantity > 0) {
         many += 1;
       }
       return null;

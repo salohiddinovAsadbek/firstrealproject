@@ -44,7 +44,7 @@ function SignUp() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           fullName: name,
-          phone: phoneNumber,
+          phone: phoneNumber.replace(/\D/g, ""),
           password: password,
           birthday: "2025-09-17",
           branch: "6877dd28939ecd40fa5fc930",
@@ -67,7 +67,12 @@ function SignUp() {
       console.log("Signup success:", data);
       console.log(password);
 
+      setPhoneNumber("");
+      setName("");
+      setPassword("");
+
       dispatch(getUserActivate(true));
+      dispatch(getActiveSection(""));
       localStorage.setItem("id", data._id);
     } catch (err) {
       console.log("Network error:", err);

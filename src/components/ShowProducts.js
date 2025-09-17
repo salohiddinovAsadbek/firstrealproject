@@ -13,7 +13,7 @@ function ShowProducts() {
 
   function AddBasket(item) {
     const newProduct = products.map((itemNew) =>
-      itemNew._id === item._id ? { ...itemNew, soni: 1 } : itemNew
+      itemNew._id === item._id ? { ...itemNew, quantity: 1 } : itemNew
     );
     dispatch(getProducts(newProduct));
   }
@@ -24,7 +24,7 @@ function ShowProducts() {
     if (type === "increment") {
       newproduct = products.map((newitem) =>
         newitem._id === item._id
-          ? { ...newitem, soni: newitem.soni + 1 }
+          ? { ...newitem, quantity: newitem.quantity + 1 }
           : newitem
       );
     }
@@ -32,14 +32,14 @@ function ShowProducts() {
     if (type === "decrement") {
       newproduct = products.map((newitem) =>
         newitem._id === item._id
-          ? { ...newitem, soni: newitem.soni - 1 }
+          ? { ...newitem, quantity: newitem.quantity - 1 }
           : newitem
       );
     }
 
     if (type === "delete") {
       newproduct = products.map((newitem) =>
-        newitem._id === item._id ? { ...newitem, soni: 0 } : newitem
+        newitem._id === item._id ? { ...newitem, quantity: 0 } : newitem
       );
     }
 
@@ -106,7 +106,7 @@ function ShowProducts() {
             {item?.salePrice} {item?.currency || "UZS"}
           </p>
 
-          {item?.soni > 0 ? (
+          {item?.quantity > 0 ? (
             <div className="showProductCardFunction">
               <button
                 className="showProductFunctionalBtn"
@@ -114,7 +114,7 @@ function ShowProducts() {
               >
                 -
               </button>
-              <p>{item.soni}</p>
+              <p>{item.quantity}</p>
               <button
                 className="showProductFunctionalBtn"
                 onClick={() => IncOrDec("increment", item)}
