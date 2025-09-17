@@ -62,7 +62,9 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/main" element={<Enter />} />
+      <Route path="/" element={<Enter />}>
+        <Route path="/main" element={<Enter />} />
+      </Route>
       <Route path="/basket" element={<Basket />} />
       <Route path="/account" element={<UserAccount />} />
       {/* <Route
