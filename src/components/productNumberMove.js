@@ -20,7 +20,11 @@ function ProductNumberMove() {
 
   return (
     <div className="productMove">
-      <button disabled={page === 1} onClick={() => dispatch(getPage(page - 1))}>
+      <button
+        disabled={page === 1}
+        onClick={() => dispatch(getPage(page - 1))}
+        style={{ opacity: page === 1 ? "70%" : "100%" }}
+      >
         Oldingi
       </button>
 
@@ -67,6 +71,7 @@ function ProductNumberMove() {
 
       <button
         disabled={page === pages}
+        style={{ opacity: page === pages ? "70%" : "100%" }}
         onClick={() => dispatch(getPage(page + 1))}
       >
         Keyingi

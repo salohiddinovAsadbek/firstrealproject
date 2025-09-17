@@ -178,6 +178,22 @@
     gap: calc(35 / 10.24 * 1vw);
     align-items: center;
   }
+
+  .enteredStateAccount {
+    display: flex;
+    gap: calc(25 / 10.24 * 1vw);
+    align-items: center;
+  }
+
+  .enteredStateAccount > i {
+    font-size: calc(17 / 10.24 * 1vw);
+    color: #374151;
+    cursor: pointer;
+  }
+
+  .enteredStateAccount > i:last-child:hover {
+    color: red;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -268,6 +284,22 @@
     gap: calc(35 / 7.68 * 1vw);
     align-items: center;
   }
+
+  .enteredStateAccount {
+    display: flex;
+    gap: calc(25 / 7.68 * 1vw);
+    align-items: center;
+  }
+
+  .enteredStateAccount > i {
+    font-size: calc(17 / 7.68 * 1vw);
+    color: #374151;
+    cursor: pointer;
+  }
+
+  .enteredStateAccount > i:last-child:hover {
+    color: red;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -357,5 +389,21 @@
     display: flex;
     gap: calc(20 / 4.8 * 1vw);
     align-items: center;
+  }
+
+  .enteredStateAccount {
+    display: flex;
+    gap: calc(25 / 4.8 * 1vw);
+    align-items: center;
+  }
+
+  .enteredStateAccount > i {
+    font-size: calc(17 / 4.8 * 1vw);
+    color: #374151;
+    cursor: pointer;
+  }
+
+  .enteredStateAccount > i:last-child:hover {
+    color: red;
   }
 }

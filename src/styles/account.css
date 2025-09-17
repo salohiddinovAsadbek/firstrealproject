@@ -222,6 +222,166 @@
     font-size: calc(18 / 10.24 * 1vw);
     color: rgb(107, 114, 128);
   }
+
+  .userEnteredAccount {
+    padding: calc(25 / 10.24 * 1vw) calc(20 / 10.24 * 1vw);
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 / 10.24 * 1vw);
+    width: 100%;
+    height: 100%;
+    padding-right: 0;
+  }
+
+  .userEnteredAccount > h1 {
+    font-size: calc(24 / 10.24 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 700;
+    margin-bottom: calc(5 / 10.24 * 1vw);
+  }
+
+  .userEnteredAccountTop {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 10.24 * 1vw);
+    align-items: center;
+    border: none;
+    border-radius: calc(10 / 10.24 * 1vw);
+    box-shadow: 0 calc(2 / 10.24 * 1vw) calc(6 / 10.24 * 1vw)
+      rgba(0, 0, 0, 0.15);
+    padding: calc(25 / 10.24 * 1vw) calc(20 / 10.24 * 1vw);
+  }
+
+  .userEnteredAccountTop > i {
+    font-size: calc(25 / 10.24 * 1vw);
+    color: var(--brand-color);
+    width: calc(54 / 10.24 * 1vw);
+    height: calc(54 / 10.24 * 1vw);
+    background-color: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userEnteredAccountTop > div > h1 {
+    font-size: calc(20 / 10.24 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredAccountTop > div > p {
+    font-size: calc(16 / 10.24 * 1vw);
+    color: rgb(75, 85, 99);
+    font-weight: 400;
+    margin-top: calc(15 / 10.24 * 1vw);
+    margin-bottom: calc(18 / 10.24 * 1vw);
+  }
+
+  .userEnteredAccountTop > div > button {
+    padding: calc(7 / 10.24 * 1vw) calc(50 / 10.24 * 1vw);
+    background-color: var(--brand-color);
+    border: none;
+    border-radius: calc(7 / 10.24 * 1vw);
+    color: white;
+    font-size: calc(16 / 10.24 * 1vw);
+    cursor: pointer;
+  }
+
+  .userEnteredAccountCars {
+    width: 100%;
+    padding: calc(25 / 10.24 * 1vw) calc(20 / 10.24 * 1vw);
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 10.24 * 1vw);
+    border: none;
+    border-radius: calc(10 / 10.24 * 1vw);
+    padding: calc(25 / 10.24 * 1vw) calc(20 / 10.24 * 1vw);
+    box-shadow: 0 calc(2 / 10.24 * 1vw) calc(6 / 10.24 * 1vw)
+      rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
+
+  .userEnteredAccountCars > h1 {
+    font-size: calc(18 / 10.24 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredAccountCars > p {
+    font-size: calc(17 / 10.24 * 1vw);
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+  }
+
+  .userEnteredAccountHistory {
+    width: 100%;
+    padding: calc(25 / 10.24 * 1vw) calc(20 / 10.24 * 1vw);
+    padding-bottom: calc(40 / 10.24 * 1vw) !important;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 10.24 * 1vw);
+    border: none;
+    border-radius: calc(10 / 10.24 * 1vw);
+    padding: calc(25 / 10.24 * 1vw) calc(20 / 10.24 * 1vw);
+    box-shadow: 0 calc(2 / 10.24 * 1vw) calc(6 / 10.24 * 1vw)
+      rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
+
+  .userEnteredAccountHistory > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: calc(15 / 10.24 * 1vw);
+  }
+
+  .userEnteredAccountHistory > div > i {
+    font-size: calc(20 / 10.24 * 1vw);
+    color: #4b5563;
+  }
+
+  .userEnteredAccountHistory > div:first-child > p {
+    font-size: calc(21 / 10.24 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredHistoryEmpty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: calc(20 / 10.24 * 1vw);
+  }
+
+  .userEnteredHistoryEmpty svg {
+    width: calc(40 / 10.24 * 1vw);
+    height: calc(40 / 10.24 * 1vw);
+    color: #9da3af;
+  }
+
+  .userEnteredHistoryEmpty > div {
+    padding: calc(20 / 10.24 * 1vw) calc(23 / 10.24 * 1vw);
+    background-color: #f3f4f6;
+    border-radius: 50%;
+  }
+
+  .userEnteredHistoryEmpty > p:nth-child(2) {
+    font-size: calc(17 / 10.24 * 1vw);
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+    margin-top: calc(20 / 10.24 * 1vw);
+    margin-bottom: calc(10 / 10.24 * 1vw);
+  }
+
+  .userEnteredHistoryEmpty > p:nth-child(3) {
+    font-size: calc(15 / 10.24 * 1vw);
+    color: rgb(156, 163, 175);
+    font-weight: 400;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -256,6 +416,164 @@
     font-size: calc(18 / 7.68 * 1vw);
     color: rgb(107, 114, 128);
   }
+
+  .userEnteredAccount {
+    padding: calc(25 / 7.68 * 1vw) calc(20 / 7.68 * 1vw);
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 / 7.68 * 1vw);
+    width: 100%;
+    height: 100vh;
+    padding-right: 0;
+  }
+
+  .userEnteredAccount > h1 {
+    font-size: calc(24 / 7.68 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 700;
+    margin-bottom: calc(5 / 7.68 * 1vw);
+  }
+
+  .userEnteredAccountTop {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 7.68 * 1vw);
+    flex-direction: column;
+    align-items: start;
+    border: none;
+    border-radius: calc(10 / 7.68 * 1vw);
+    box-shadow: 0 calc(2 / 7.68 * 1vw) calc(6 / 7.68 * 1vw) rgba(0, 0, 0, 0.15);
+    padding: calc(25 / 7.68 * 1vw) calc(20 / 7.68 * 1vw);
+  }
+
+  .userEnteredAccountTop > i {
+    font-size: calc(25 / 7.68 * 1vw);
+    color: var(--brand-color);
+    width: calc(54 / 7.68 * 1vw);
+    height: calc(54 / 7.68 * 1vw);
+    background-color: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userEnteredAccountTop > div > h1 {
+    font-size: calc(20 / 7.68 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredAccountTop > div > p {
+    font-size: calc(16 / 7.68 * 1vw);
+    color: rgb(75, 85, 99);
+    font-weight: 400;
+    margin-top: calc(15 / 7.68 * 1vw);
+    margin-bottom: calc(18 / 7.68 * 1vw);
+  }
+
+  .userEnteredAccountTop > div > button {
+    padding: calc(7 / 7.68 * 1vw) calc(50 / 7.68 * 1vw);
+    background-color: var(--brand-color);
+    border: none;
+    border-radius: calc(7 / 7.68 * 1vw);
+    color: white;
+    font-size: calc(16 / 7.68 * 1vw);
+    cursor: pointer;
+  }
+
+  .userEnteredAccountCars {
+    width: 100%;
+    padding: calc(25 / 7.68 * 1vw) calc(20 / 7.68 * 1vw);
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 7.68 * 1vw);
+    border: none;
+    border-radius: calc(10 / 7.68 * 1vw);
+    padding: calc(25 / 7.68 * 1vw) calc(20 / 7.68 * 1vw);
+    box-shadow: 0 calc(2 / 7.68 * 1vw) calc(6 / 7.68 * 1vw) rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
+
+  .userEnteredAccountCars > h1 {
+    font-size: calc(18 / 7.68 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredAccountCars > p {
+    font-size: calc(17 / 7.68 * 1vw);
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+  }
+
+  .userEnteredAccountHistory {
+    width: 100%;
+    padding: calc(25 / 7.68 * 1vw) calc(20 / 7.68 * 1vw);
+    padding-bottom: calc(40 / 7.68 * 1vw) !important;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 7.68 * 1vw);
+    border: none;
+    border-radius: calc(10 / 7.68 * 1vw);
+    padding: calc(25 / 7.68 * 1vw) calc(20 / 7.68 * 1vw);
+    box-shadow: 0 calc(2 / 7.68 * 1vw) calc(6 / 7.68 * 1vw) rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
+
+  .userEnteredAccountHistory > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: calc(15 / 7.68 * 1vw);
+  }
+
+  .userEnteredAccountHistory > div > i {
+    font-size: calc(20 / 7.68 * 1vw);
+    color: #4b5563;
+  }
+
+  .userEnteredAccountHistory > div:first-child > p {
+    font-size: calc(21 / 7.68 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredHistoryEmpty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: calc(20 / 7.68 * 1vw);
+  }
+
+  .userEnteredHistoryEmpty svg {
+    width: calc(40 / 7.68 * 1vw);
+    height: calc(40 / 7.68 * 1vw);
+    color: #9da3af;
+  }
+
+  .userEnteredHistoryEmpty > div {
+    padding: calc(20 / 7.68 * 1vw) calc(23 / 7.68 * 1vw);
+    background-color: #f3f4f6;
+    border-radius: 50%;
+  }
+
+  .userEnteredHistoryEmpty > p:nth-child(2) {
+    font-size: calc(17 / 7.68 * 1vw);
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+    margin-top: calc(20 / 7.68 * 1vw);
+    margin-bottom: calc(10 / 7.68 * 1vw);
+  }
+
+  .userEnteredHistoryEmpty > p:nth-child(3) {
+    font-size: calc(15 / 7.68 * 1vw);
+    color: rgb(156, 163, 175);
+    font-weight: 400;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -289,5 +607,162 @@
   .accountEmpty > p {
     font-size: calc(18 / 4.8 * 1vw);
     color: rgb(107, 114, 128);
+  }
+
+  .userEnteredAccount {
+    padding: calc(25 / 4.8 * 1vw) calc(20 / 4.8 * 1vw);
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 / 4.8 * 1vw);
+    width: 100%;
+    height: 100%;
+    padding-right: 0;
+  }
+
+  .userEnteredAccount > h1 {
+    font-size: calc(24 / 4.8 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 700;
+    margin-bottom: calc(5 / 4.8 * 1vw);
+  }
+
+  .userEnteredAccountTop {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 4.8 * 1vw);
+    align-items: start;
+    border: none;
+    border-radius: calc(10 / 4.8 * 1vw);
+    box-shadow: 0 calc(2 / 4.8 * 1vw) calc(6 / 4.8 * 1vw) rgba(0, 0, 0, 0.15);
+    padding: calc(25 / 4.8 * 1vw) calc(20 / 4.8 * 1vw);
+  }
+
+  .userEnteredAccountTop > i {
+    font-size: calc(25 / 4.8 * 1vw);
+    color: var(--brand-color);
+    width: calc(54 / 4.8 * 1vw);
+    height: calc(54 / 4.8 * 1vw);
+    background-color: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userEnteredAccountTop > div > h1 {
+    font-size: calc(20 / 4.8 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredAccountTop > div > p {
+    font-size: calc(16 / 4.8 * 1vw);
+    color: rgb(75, 85, 99);
+    font-weight: 400;
+    margin-top: calc(15 / 4.8 * 1vw);
+    margin-bottom: calc(18 / 4.8 * 1vw);
+  }
+
+  .userEnteredAccountTop > div > button {
+    padding: calc(7 / 4.8 * 1vw) calc(50 / 4.8 * 1vw);
+    background-color: var(--brand-color);
+    border: none;
+    border-radius: calc(7 / 4.8 * 1vw);
+    color: white;
+    font-size: calc(16 / 4.8 * 1vw);
+    cursor: pointer;
+  }
+
+  .userEnteredAccountCars {
+    width: 100%;
+    padding: calc(25 / 4.8 * 1vw) calc(20 / 4.8 * 1vw);
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 4.8 * 1vw);
+    border: none;
+    border-radius: calc(10 / 4.8 * 1vw);
+    padding: calc(25 / 4.8 * 1vw) calc(20 / 4.8 * 1vw);
+    box-shadow: 0 calc(2 / 4.8 * 1vw) calc(6 / 4.8 * 1vw) rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
+
+  .userEnteredAccountCars > h1 {
+    font-size: calc(18 / 4.8 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredAccountCars > p {
+    font-size: calc(17 / 4.8 * 1vw);
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+  }
+
+  .userEnteredAccountHistory {
+    width: 100%;
+    padding: calc(25 / 4.8 * 1vw) calc(20 / 4.8 * 1vw);
+    padding-bottom: calc(40 / 4.8 * 1vw) !important;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: calc(15 / 4.8 * 1vw);
+    border: none;
+    border-radius: calc(10 / 4.8 * 1vw);
+    padding: calc(25 / 4.8 * 1vw) calc(20 / 4.8 * 1vw);
+    box-shadow: 0 calc(2 / 4.8 * 1vw) calc(6 / 4.8 * 1vw) rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
+
+  .userEnteredAccountHistory > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: calc(15 / 4.8 * 1vw);
+  }
+
+  .userEnteredAccountHistory > div > i {
+    font-size: calc(20 / 4.8 * 1vw);
+    color: #4b5563;
+  }
+
+  .userEnteredAccountHistory > div:first-child > p {
+    font-size: calc(21 / 4.8 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 600;
+  }
+
+  .userEnteredHistoryEmpty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: calc(20 / 4.8 * 1vw);
+  }
+
+  .userEnteredHistoryEmpty svg {
+    width: calc(40 / 4.8 * 1vw);
+    height: calc(40 / 4.8 * 1vw);
+    color: #9da3af;
+  }
+
+  .userEnteredHistoryEmpty > div {
+    padding: calc(20 / 4.8 * 1vw) calc(23 / 4.8 * 1vw);
+    background-color: #f3f4f6;
+    border-radius: 50%;
+  }
+
+  .userEnteredHistoryEmpty > p:nth-child(2) {
+    font-size: calc(17 / 4.8 * 1vw);
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+    margin-top: calc(20 / 4.8 * 1vw);
+    margin-bottom: calc(10 / 4.8 * 1vw);
+  }
+
+  .userEnteredHistoryEmpty > p:nth-child(3) {
+    font-size: calc(15 / 4.8 * 1vw);
+    color: rgb(156, 163, 175);
+    font-weight: 400;
   }
 }

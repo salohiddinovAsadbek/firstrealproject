@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { getActiveSection } from "../store/activeSections";
 import { useState } from "react";
 import { getUserActivate } from "../store/isUserEntered";
+import { getUserData } from "../store/userData";
 
 function Login() {
   const dispatch = useDispatch();
@@ -59,8 +60,7 @@ function Login() {
       localStorage.setItem("token", data.token);
       localStorage.setItem("id", data.client._id);
 
-      console.log("Login success:", data.token);
-
+      dispatch(getUserData(data));
       dispatch(getUserActivate(true));
       dispatch(getActiveSection(""));
     } catch (err) {

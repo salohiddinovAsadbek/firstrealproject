@@ -7,6 +7,7 @@ import Login from "./login";
 import { getActiveSection } from "../store/activeSections";
 import SignUp from "./signup";
 import { getUserActivate } from "../store/isUserEntered";
+import { ToastContainer } from "react-toastify";
 
 function Header() {
   const products = useSelector((state) => state.productsData);
@@ -62,6 +63,7 @@ function Header() {
                 navigate("/account");
               }}
             ></i>
+            {/* <p>{userDataAll.fullName}</p> */}
             <i
               className="fa-solid fa-arrow-right-from-bracket"
               onClick={() => {
@@ -81,6 +83,8 @@ function Header() {
           </button>
         )}
       </div>
+
+      <ToastContainer />
 
       {activeSection === "login" ? <Login /> : ""}
       {activeSection === "signup" ? <SignUp /> : ""}

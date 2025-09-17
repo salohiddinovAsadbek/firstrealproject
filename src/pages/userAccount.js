@@ -5,6 +5,7 @@ import "../styles/account.css";
 
 function UserAccount() {
   const isUserActivated = useSelector((state) => state.userData);
+  const userDataAll = useSelector((state) => state.userDataAll);
 
   return (
     <div className="account">
@@ -42,10 +43,7 @@ function UserAccount() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-shopping-bag h-8 w-8 text-gray-400"
+                      className="lucide lucide-shopping-bag h-8 w-8 text-gray-400"
                     >
                       <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
                       <path d="M3 6h18"></path>

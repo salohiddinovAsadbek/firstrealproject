@@ -7,6 +7,7 @@ import activeSections from "./activeSections";
 import addAnimation from "./isWaiting";
 import isUserEntered from "./isUserEntered";
 import getDataCount from "./pagesCountData";
+import getUserData from "./userData";
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export const store = configureStore({
     animationData: addAnimation,
     userData: isUserEntered,
     pageData: getDataCount,
+    userDataAll: getUserData,
   },
 });

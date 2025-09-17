@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "../styles/showproducts.css";
 import { getProducts } from "../store/products";
 import WaitAnimation from "./waitAnimation";
+import { toast } from "react-toastify";
 
 function ShowProducts() {
   const products = useSelector((state) => state.productsData);
@@ -43,6 +44,23 @@ function ShowProducts() {
     }
 
     dispatch(getProducts(newproduct));
+  }
+
+  function toastify(value, type) {
+    if (type === "err") {
+      toast.error(`${value}`, {
+        position: "top-left", // top-right, top-left, top-center...
+        autoClose: 2000,
+      });
+    }
+    if (type === "succ") {
+      console.log(type);
+
+      toast.success(`${value}`, {
+        position: "top-left", // top-right, top-left, top-center...
+        autoClose: 2000,
+      });
+    }
   }
 
   let filteredProducts = products.filter((item) => {
@@ -105,7 +123,10 @@ function ShowProducts() {
               </button>
               <button
                 className="showProductdeleteBtn"
-                onClick={() => IncOrDec("delete", item)}
+                onClick={() => {
+                  IncOrDec("delete", item);
+                  toastify("Mahsulot savatdan olib tashlandi", "succ");
+                }}
               >
                 <i className="fa-solid fa-trash"></i>
               </button>

@@ -8,6 +8,9 @@ import { getProducts } from "./store/products";
 import { addAnimation } from "./store/isWaiting";
 import "./styles/style.css";
 import { getUserActivate } from "./store/isUserEntered";
+import { getMe } from "./store/up";
+import { getUserData } from "./store/userData";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +43,7 @@ function App() {
         .then((data) => {
           if (userId === data._id) {
             dispatch(getUserActivate(true));
+            dispatch(getUserData(data));
           } else {
             console.log("token mos emas");
           }
@@ -52,12 +56,15 @@ function App() {
     //   .then((data) => console.log(data));
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(getMe());
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/main" element={<Enter />} />
       <Route path="/basket" element={<Basket />} />
       <Route path="/account" element={<UserAccount />} />
-
       {/* <Route
         path="/main"
         element={

@@ -4,11 +4,13 @@ import Navigation from "../components/Navigation";
 import "../styles/basket.css";
 import { getProducts } from "../store/products";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 function Basket() {
   const products = useSelector((state) => state.productsData);
   const dispatch = useDispatch();
   const [overallPrice, setOverallPrice] = useState(0);
+  const isUserActivated = useSelector((state) => state.userData);
 
   useEffect(() => {
     let total = 0;
@@ -22,6 +24,23 @@ function Basket() {
 
     setOverallPrice(total);
   }, [products]);
+
+  function toastify(value, type) {
+    if (type === "err") {
+      toast.error(`${value}`, {
+        position: "top-left", // top-right, top-left, top-center...
+        autoClose: 2000,
+      });
+    }
+    if (type === "succ") {
+      console.log(type);
+
+      toast.success(`${value}`, {
+        position: "top-left", // top-right, top-left, top-center...
+        autoClose: 2000,
+      });
+    }
+  }
 
   return (
     <div>
@@ -85,6 +104,11 @@ function Basket() {
                                 : newitem;
                             });
 
+                            toastify(
+                              "Mahsulot savatdan olib tashlandi",
+                              "succ"
+                            );
+
                             dispatch(getProducts(newProduct));
                           }}
                         >
@@ -104,7 +128,16 @@ function Basket() {
                   <h1>To'lov uchun:</h1>
                   <p>{overallPrice} UZS</p>
                 </div>
-                <button className="verifyBtn">
+                <button
+                  className="verifyBtn"
+                  onClick={() => {
+                    if (isUserActivated) {
+                      toastify("Muvaffaqiyatli yuborildi", "succ");
+                    } else {
+                      toastify("Iltimos, avval tizimga kiring", "err");
+                    }
+                  }}
+                >
                   Buyurtmani rasmiylashtirish
                 </button>
               </div>

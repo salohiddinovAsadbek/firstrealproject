@@ -13,3 +13,8 @@ a {
 :root {
   --brand-color: rgb(37, 99, 235);
 }
+
+section {
+  position: absolute;
+  z-index: 14;
+}

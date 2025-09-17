@@ -87,6 +87,14 @@
   color: rgb(75, 85, 99);
 }
 
+.mainProducts > p {
+  font-size: calc(16 / 16 * 1vw);
+  color: rgb(75, 85, 99);
+  font-weight: 400;
+  text-align: center;
+  padding: calc(20 / 15 * 1vw);
+}
+
 @media only screen and (max-width: 1024px) {
   .mainProducts {
     position: absolute;
@@ -178,6 +186,14 @@
 
   .searchProductsBottom > p {
     font-size: calc(16 / 10.24 * 1vw);
+  }
+
+  .mainProducts > p {
+    font-size: calc(16 / 10.24 * 1vw);
+    color: rgb(75, 85, 99);
+    font-weight: 400;
+    text-align: center;
+    padding: calc(20 / 10.24 * 1vw);
   }
 }
 
@@ -272,6 +288,14 @@
   .searchProductsBottom > p {
     font-size: calc(16 / 7.68 * 1vw);
   }
+
+  .mainProducts > p {
+    font-size: calc(16 / 7.68 * 1vw);
+    color: rgb(75, 85, 99);
+    font-weight: 400;
+    text-align: center;
+    padding: calc(20 / 7.68 * 1vw);
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -364,5 +388,13 @@
 
   .searchProductsBottom > p {
     font-size: calc(16 / 4.8 * 1vw);
+  }
+
+  .mainProducts > p {
+    font-size: calc(16 / 4.8 * 1vw);
+    color: rgb(75, 85, 99);
+    font-weight: 400;
+    text-align: center;
+    padding: calc(20 / 4.8 * 1vw);
   }
 }

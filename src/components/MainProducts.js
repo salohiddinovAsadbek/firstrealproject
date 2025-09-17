@@ -7,6 +7,7 @@ import ProductNumberMove from "./productNumberMove";
 function MainProducts() {
   const dispatch = useDispatch();
   const currentInput = useSelector((state) => state.inputData);
+  const products = useSelector((state) => state.productsData);
 
   return (
     <div className="mainProducts">
@@ -57,6 +58,7 @@ function MainProducts() {
       </div>
       <ShowProducts />
       <ProductNumberMove />
+      <p>Jami {products.length} ta mahsulot</p>
     </div>
   );
 }
