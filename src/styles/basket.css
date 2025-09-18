@@ -1,5 +1,5 @@
 .basketWrapper {
-  position: absolute;
+  position: fixed;
   padding-top: calc(90 / 16 * 1vw);
   padding-left: calc(270 / 16 * 1vw);
   width: 100%;
@@ -196,7 +196,7 @@
 
 @media only screen and (max-width: 1024px) {
   .basketWrapper {
-    position: absolute;
+    position: fixed;
     padding-top: calc(90 / 10.24 * 1vw);
     padding-left: calc(30 / 10.24 * 1vw);
     width: 100%;
@@ -396,7 +396,7 @@
 
 @media only screen and (max-width: 768px) {
   .basketWrapper {
-    position: absolute;
+    position: fixed;
     padding-top: calc(90 / 7.68 * 1vw);
     padding-left: calc(30 / 7.68 * 1vw);
     width: 100%;
@@ -594,7 +594,7 @@
 
 @media only screen and (max-width: 480px) {
   .basketWrapper {
-    position: absolute;
+    position: fixed;
     padding-top: calc(90 / 4.8 * 1vw);
     padding-left: calc(30 / 4.8 * 1vw);
     width: 100%;

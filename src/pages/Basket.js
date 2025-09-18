@@ -133,6 +133,11 @@ function Basket() {
                   onClick={() => {
                     if (isUserActivated) {
                       toastify("Muvaffaqiyatli yuborildi", "succ");
+                      dispatch(
+                        getProducts(
+                          products.map((item) => ({ ...item, quantity: 0 }))
+                        )
+                      );
                     } else {
                       toastify("Iltimos, avval tizimga kiring", "err");
                     }

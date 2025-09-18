@@ -242,7 +242,6 @@
   .showImgBigWrapper > div > img {
     max-width: calc(500 / 4.8 * 1vw);
     max-height: calc(500 / 4.8 * 1vw);
-    /* transform: scale(3.4); */
     border-radius: calc(8 / 4.8 * 1vw);
   }
 
