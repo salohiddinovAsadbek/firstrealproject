@@ -1,0 +1,425 @@
+.editWrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.356);
+  z-index: 16;
+  top: 0;
+}
+
+.editCard {
+  background-color: white;
+  border-radius: calc(10 / 16 * 1vw);
+  padding: calc(20 / 16 * 1vw);
+}
+
+.editCard > div:first-child {
+  display: flex;
+  gap: calc(250 / 16 * 1vw);
+}
+
+.editCard > div > h1 {
+  font-size: calc(21 / 16 * 1vw);
+  color: rgb(17, 24, 39);
+  font-weight: 700;
+}
+
+.editCard > div > i {
+  font-size: calc(20 / 16 * 1vw);
+  color: #9da3af;
+  cursor: pointer;
+}
+
+.editCard > div > i:hover {
+  color: #696a6d;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 / 16 * 1vw);
+  width: 100%;
+  margin-top: calc(15 / 16 * 1vw);
+  margin-bottom: calc(15 / 16 * 1vw);
+}
+
+.editForm > label {
+  display: flex;
+  flex-direction: column;
+  gap: calc(5 / 16 * 1vw);
+}
+
+.editForm > label > p {
+  font-size: calc(18 / 16 * 1vw);
+  color: rgb(55, 65, 81);
+  font-weight: 400;
+}
+
+.editForm > label > input {
+  width: 100%;
+  height: calc(35 / 16 * 1vw);
+  border: calc(1 / 16 * 1vw) solid#e6e7eb;
+  border-radius: calc(8 / 16 * 1vw);
+  padding-left: calc(20 / 16 * 1vw);
+  padding-right: calc(20 / 16 * 1vw);
+  font-size: calc(16 / 16 * 1vw);
+}
+
+.editCard > div:nth-child(3) > button {
+  padding: calc(10 / 16 * 1vw) calc(15 / 16 * 1vw);
+  font-size: calc(16 / 16 * 1vw);
+  border-radius: calc(9 / 16 * 1vw);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editCard > div:nth-child(3) {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: calc(10 / 16 * 1vw);
+}
+
+.editCard > div:nth-child(3) > button:first-child {
+  background-color: #e6e7eb;
+  color: #444d5c;
+}
+
+.editCard > div:nth-child(3) > button:first-child:hover {
+  background-color: #c5c6c8;
+  color: #444d5c;
+}
+
+.editCard > div:nth-child(3) > button:nth-child(2) {
+  background-color: var(--brand-color);
+  color: white;
+}
+
+.editCard > div:nth-child(3) > button:nth-child(2):hover {
+  background-color: #194bb5;
+}
+
+@media only screen and (max-width: 1024px) {
+  .editWrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.356);
+    z-index: 16;
+    top: 0;
+  }
+
+  .editCard {
+    background-color: white;
+    border-radius: calc(10 / 10.24 * 1vw);
+    padding: calc(20 / 10.24 * 1vw);
+  }
+
+  .editCard > div:first-child {
+    display: flex;
+    gap: calc(250 / 10.24 * 1vw);
+  }
+
+  .editCard > div > h1 {
+    font-size: calc(21 / 10.24 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 700;
+  }
+
+  .editCard > div > i {
+    font-size: calc(20 / 10.24 * 1vw);
+    color: #9da3af;
+    cursor: pointer;
+  }
+
+  .editCard > div > i:hover {
+    color: #696a6d;
+  }
+
+  .editForm {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 / 10.24 * 1vw);
+    width: 100%;
+    margin-top: calc(15 / 10.24 * 1vw);
+    margin-bottom: calc(15 / 10.24 * 1vw);
+  }
+
+  .editForm > label {
+    display: flex;
+    flex-direction: column;
+    gap: calc(5 / 10.24 * 1vw);
+  }
+
+  .editForm > label > p {
+    font-size: calc(18 / 10.24 * 1vw);
+    color: rgb(55, 65, 81);
+    font-weight: 400;
+  }
+
+  .editForm > label > input {
+    width: 100%;
+    height: calc(35 / 10.24 * 1vw);
+    border: calc(1 / 10.24 * 1vw) solid#e6e7eb;
+    border-radius: calc(8 / 10.24 * 1vw);
+    padding-left: calc(20 / 10.24 * 1vw);
+    padding-right: calc(20 / 10.24 * 1vw);
+    font-size: calc(16 / 10.24 * 1vw);
+  }
+
+  .editCard > div:nth-child(3) > button {
+    padding: calc(10 / 10.24 * 1vw) calc(15 / 10.24 * 1vw);
+    font-size: calc(16 / 10.24 * 1vw);
+    border-radius: calc(9 / 10.24 * 1vw);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .editCard > div:nth-child(3) {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: calc(10 / 10.24 * 1vw);
+  }
+
+  .editCard > div:nth-child(3) > button:first-child {
+    background-color: #e6e7eb;
+    color: #444d5c;
+  }
+
+  .editCard > div:nth-child(3) > button:first-child:hover {
+    background-color: #c5c6c8;
+    color: #444d5c;
+  }
+
+  .editCard > div:nth-child(3) > button:nth-child(2) {
+    background-color: var(--brand-color);
+    color: white;
+  }
+
+  .editCard > div:nth-child(3) > button:nth-child(2):hover {
+    background-color: #194bb5;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .editWrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.356);
+    z-index: 16;
+    top: 0;
+  }
+
+  .editCard {
+    background-color: white;
+    border-radius: calc(10 / 7.68 * 1vw);
+    padding: calc(20 / 7.68 * 1vw);
+  }
+
+  .editCard > div:first-child {
+    display: flex;
+    gap: calc(300 / 7.68 * 1vw);
+  }
+
+  .editCard > div > h1 {
+    font-size: calc(24 / 7.68 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 700;
+  }
+
+  .editCard > div > i {
+    font-size: calc(24 / 7.68 * 1vw);
+    color: #9da3af;
+    cursor: pointer;
+  }
+
+  .editCard > div > i:hover {
+    color: #696a6d;
+  }
+
+  .editForm {
+    display: flex;
+    flex-direction: column;
+    gap: calc(25 / 7.68 * 1vw);
+    width: 100%;
+    margin-top: calc(20 / 7.68 * 1vw);
+    margin-bottom: calc(20 / 7.68 * 1vw);
+  }
+
+  .editForm > label {
+    display: flex;
+    flex-direction: column;
+    gap: calc(10 / 7.68 * 1vw);
+  }
+
+  .editForm > label > p {
+    font-size: calc(22 / 7.68 * 1vw);
+    color: rgb(55, 65, 81);
+    font-weight: 400;
+  }
+
+  .editForm > label > input {
+    width: 100%;
+    height: calc(40 / 7.68 * 1vw);
+    border: calc(1 / 7.68 * 1vw) solid#e6e7eb;
+    border-radius: calc(8 / 7.68 * 1vw);
+    padding-left: calc(25 / 7.68 * 1vw);
+    padding-right: calc(25 / 7.68 * 1vw);
+    font-size: calc(16 / 7.68 * 1vw);
+  }
+
+  .editCard > div:nth-child(3) > button {
+    padding: calc(10 / 7.68 * 1vw) calc(15 / 7.68 * 1vw);
+    font-size: calc(16 / 7.68 * 1vw);
+    border-radius: calc(9 / 7.68 * 1vw);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .editCard > div:nth-child(3) {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: calc(10 / 7.68 * 1vw);
+  }
+
+  .editCard > div:nth-child(3) > button:first-child {
+    background-color: #e6e7eb;
+    color: #444d5c;
+  }
+
+  .editCard > div:nth-child(3) > button:first-child:hover {
+    background-color: #c5c6c8;
+    color: #444d5c;
+  }
+
+  .editCard > div:nth-child(3) > button:nth-child(2) {
+    background-color: var(--brand-color);
+    color: white;
+  }
+
+  .editCard > div:nth-child(3) > button:nth-child(2):hover {
+    background-color: #194bb5;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .editWrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.356);
+    z-index: 16;
+    top: 0;
+  }
+
+  .editCard {
+    background-color: white;
+    border-radius: calc(10 / 4.8 * 1vw);
+    padding: calc(20 / 4.8 * 1vw);
+  }
+
+  .editCard > div:first-child {
+    display: flex;
+    gap: calc(200 / 4.8 * 1vw);
+  }
+
+  .editCard > div > h1 {
+    font-size: calc(24 / 4.8 * 1vw);
+    color: rgb(17, 24, 39);
+    font-weight: 700;
+  }
+
+  .editCard > div > i {
+    font-size: calc(24 / 4.8 * 1vw);
+    color: #9da3af;
+    cursor: pointer;
+  }
+
+  .editCard > div > i:hover {
+    color: #696a6d;
+  }
+
+  .editForm {
+    display: flex;
+    flex-direction: column;
+    gap: calc(25 / 4.8 * 1vw);
+    width: 100%;
+    margin-top: calc(20 / 4.8 * 1vw);
+    margin-bottom: calc(20 / 4.8 * 1vw);
+  }
+
+  .editForm > label {
+    display: flex;
+    flex-direction: column;
+    gap: calc(10 / 4.8 * 1vw);
+  }
+
+  .editForm > label > p {
+    font-size: calc(22 / 4.8 * 1vw);
+    color: rgb(55, 65, 81);
+    font-weight: 400;
+  }
+
+  .editForm > label > input {
+    width: 100%;
+    height: calc(40 / 4.8 * 1vw);
+    border: calc(1 / 4.8 * 1vw) solid#e6e7eb;
+    border-radius: calc(8 / 4.8 * 1vw);
+    padding-left: calc(25 / 4.8 * 1vw);
+    padding-right: calc(25 / 4.8 * 1vw);
+    font-size: calc(16 / 4.8 * 1vw);
+  }
+
+  .editCard > div:nth-child(3) > button {
+    padding: calc(10 / 4.8 * 1vw) calc(15 / 4.8 * 1vw);
+    font-size: calc(16 / 4.8 * 1vw);
+    border-radius: calc(9 / 4.8 * 1vw);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .editCard > div:nth-child(3) {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: calc(10 / 4.8 * 1vw);
+  }
+
+  .editCard > div:nth-child(3) > button:first-child {
+    background-color: #e6e7eb;
+    color: #444d5c;
+  }
+
+  .editCard > div:nth-child(3) > button:first-child:hover {
+    background-color: #c5c6c8;
+    color: #444d5c;
+  }
+
+  .editCard > div:nth-child(3) > button:nth-child(2) {
+    background-color: var(--brand-color);
+    color: white;
+  }
+
+  .editCard > div:nth-child(3) > button:nth-child(2):hover {
+    background-color: #194bb5;
+  }
+}

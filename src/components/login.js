@@ -5,6 +5,7 @@ import { getActiveSection } from "../store/activeSections";
 import { useState } from "react";
 import { getUserActivate } from "../store/isUserEntered";
 import { getUserData } from "../store/userData";
+import { toast } from "react-toastify";
 
 function Login() {
   const dispatch = useDispatch();
@@ -37,6 +38,21 @@ function Login() {
     setPhoneNumber(formatted);
   }
 
+  function toastify(value, type) {
+    if (type === "err") {
+      toast.error(`${value}`, {
+        position: "top-left", // top-right, top-left, top-center...
+        autoClose: 2000,
+      });
+    }
+    if (type === "succ") {
+      toast.success(`${value}`, {
+        position: "top-left", // top-right, top-left, top-center...
+        autoClose: 2000,
+      });
+    }
+  }
+
   async function CheckUser() {
     try {
       const res = await fetch(
@@ -63,6 +79,7 @@ function Login() {
       dispatch(getUserData(data));
       dispatch(getUserActivate(true));
       dispatch(getActiveSection(""));
+      toastify("Tizimga, muvaffaqiyatli kirildi", "succ");
     } catch (err) {
       console.log("Network error:", err);
     }

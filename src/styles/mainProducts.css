@@ -95,6 +95,33 @@
   padding: calc(20 / 15 * 1vw);
 }
 
+/* media qoshildi */
+
+.clearSearch {
+  display: flex;
+  gap: calc(15 / 16 * 1vw);
+  align-items: center;
+  padding: calc(10 / 16 * 1vw) calc(14 / 16 * 1vw);
+  background-color: #6c7280;
+  border-radius: calc(7 / 16 * 1vw);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clearSearch:hover {
+  background-color: #4f525b;
+}
+
+.clearSearch > i {
+  color: white;
+  font-size: calc(17 / 16 * 1vw);
+}
+
+.clearSearch > p {
+  font-size: calc(17 / 16 * 1vw);
+  color: white;
+}
+
 @media only screen and (max-width: 1024px) {
   .mainProducts {
     position: absolute;

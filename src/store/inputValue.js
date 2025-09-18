@@ -5,6 +5,7 @@ const inputValue = createSlice({
   initialState: {
     input: "",
     currency: "",
+    sort: "",
   },
   reducers: {
     writeInput: (state, action) => {
@@ -13,8 +14,11 @@ const inputValue = createSlice({
     doCurrency: (state, action) => {
       return { ...state, currency: action.payload };
     },
+    doSort: (state, action) => {
+      return { ...state, sort: action.payload };
+    },
   },
 });
 
-export const { writeInput, doCurrency } = inputValue.actions;
+export const { writeInput, doCurrency, doSort } = inputValue.actions;
 export default inputValue.reducer;

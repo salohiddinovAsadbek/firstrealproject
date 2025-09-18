@@ -64,8 +64,6 @@ function SignUp() {
       }
 
       const data = await res.json();
-      console.log("Signup success:", data);
-      console.log(password);
 
       setPhoneNumber("");
       setName("");

@@ -3,6 +3,8 @@ import "../styles/showproducts.css";
 import { getProducts } from "../store/products";
 import WaitAnimation from "./waitAnimation";
 import { toast } from "react-toastify";
+import ShowImgBig from "./showImgBig";
+import { useState } from "react";
 
 function ShowProducts() {
   const products = useSelector((state) => state.productsData);
@@ -10,6 +12,7 @@ function ShowProducts() {
   const dispatch = useDispatch();
   const animation = useSelector((state) => state.animationData);
   const pageData = useSelector((state) => state.pageData);
+  const [isShow, setShow] = useState("");
 
   function AddBasket(item) {
     const newProduct = products.map((itemNew) =>
@@ -80,6 +83,24 @@ function ShowProducts() {
     return true;
   });
 
+  if (currentInput?.sort && currentInput?.sort !== "tartiblash") {
+    if (currentInput?.sort === "A-Z") {
+      filteredProducts.sort((a, b) => a.name[0] - b.name[0]);
+    }
+
+    if (currentInput?.sort === "Z-A") {
+      filteredProducts.sort((a, b) => b.name[0] - a.name[0]);
+    }
+
+    if (currentInput?.sort === "arzon") {
+      filteredProducts.sort((a, b) => a.salePrice - b.salePrice);
+    }
+
+    if (currentInput?.sort === "qimmat") {
+      filteredProducts.sort((a, b) => b.salePrice - a.salePrice);
+    }
+  }
+
   const newArr = filteredProducts.slice(
     (pageData.page - 1) * Number(pageData.perPage),
     (pageData.page - 1) * Number(pageData.perPage) + Number(pageData.perPage)
@@ -88,15 +109,21 @@ function ShowProducts() {
   return (
     <div className="showProducts">
       {animation && <WaitAnimation />}
+      {isShow && <ShowImgBig img={isShow} setShow={setShow} />}
 
       {newArr.map((item, i) => (
         <div className="showProductsCard" key={`${item.branch._id}+${i}`}>
           {item.images[0]?.fileURL ? (
-            <img
-              src={item?.images[0]?.fileURL}
-              alt={item?.description || item?.name}
-              height={170}
-            />
+            <>
+              <img
+                src={item?.images[0]?.fileURL}
+                alt={item?.description || item?.name}
+                height={170}
+                onClick={() => {
+                  setShow(item?.images[0]?.fileURL);
+                }}
+              />
+            </>
           ) : (
             <p className="imgDefault">{item.description}</p>
           )}

@@ -1,0 +1,289 @@
+.showImgBigWrapper {
+  display: flex;
+  position: fixed;
+  z-index: 14;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.684);
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.showImgBigWrapper > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: calc(5 / 16 * 1vw) solid rgba(255, 255, 255, 0.23);
+  border-radius: calc(8 / 16 * 1vw);
+}
+
+.showImgBigWrapper > div > img {
+  max-width: calc(800 / 16 * 1vw);
+  max-height: calc(800 / 16 * 1vw);
+  /* transform: scale(3.4); */
+  border-radius: calc(8 / 16 * 1vw);
+}
+
+.showImgBigWrapper button {
+  position: absolute;
+  top: calc(-20 / 16 * 1vw);
+  right: calc(-20 / 16 * 1vw);
+  background-color: white;
+  padding: calc(15 / 16 * 1vw) calc(18 / 16 * 1vw);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.showImgBigWrapper button:hover {
+  animation: reverseIn 0.3s forwards;
+}
+
+@keyframes reverseIn {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 90deg;
+  }
+}
+
+@keyframes reverseOut {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: -90deg;
+  }
+}
+
+.showImgBigWrapper button > i {
+  font-size: calc(25 / 16 * 1vw);
+  color: #374151;
+}
+
+@media only screen and (max-width: 1024px) {
+  .showImgBigWrapper {
+    display: flex;
+    position: fixed;
+    z-index: 14;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.684);
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .showImgBigWrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: calc(5 / 10.24 * 1vw) solid rgba(255, 255, 255, 0.23);
+    border-radius: calc(8 / 10.24 * 1vw);
+  }
+
+  .showImgBigWrapper > div > img {
+    max-width: calc(800 / 10.24 * 1vw);
+    max-height: calc(800 / 10.24 * 1vw);
+    /* transform: scale(3.4); */
+    border-radius: calc(8 / 10.24 * 1vw);
+  }
+
+  .showImgBigWrapper button {
+    position: absolute;
+    top: calc(-20 / 10.24 * 1vw);
+    right: calc(-20 / 10.24 * 1vw);
+    background-color: white;
+    padding: calc(15 / 10.24 * 1vw) calc(18 / 10.24 * 1vw);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .showImgBigWrapper button:hover {
+    animation: reverseIn 0.3s forwards;
+  }
+
+  @keyframes reverseIn {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 90deg;
+    }
+  }
+
+  @keyframes reverseOut {
+    from {
+      rotate: 0;
+    }
+    to {
+      rotate: -90deg;
+    }
+  }
+
+  .showImgBigWrapper button > i {
+    font-size: calc(25 / 10.24 * 1vw);
+    color: #374151;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .showImgBigWrapper {
+    display: flex;
+    position: fixed;
+    z-index: 14;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.684);
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .showImgBigWrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: calc(5 / 7.68 * 1vw) solid rgba(255, 255, 255, 0.23);
+    border-radius: calc(8 / 7.68 * 1vw);
+  }
+
+  .showImgBigWrapper > div > img {
+    max-width: calc(800 / 7.68 * 1vw);
+    max-height: calc(800 / 7.68 * 1vw);
+    /* transform: scale(3.4); */
+    border-radius: calc(8 / 7.68 * 1vw);
+  }
+
+  .showImgBigWrapper button {
+    position: absolute;
+    top: calc(-20 / 7.68 * 1vw);
+    right: calc(-20 / 7.68 * 1vw);
+    background-color: white;
+    padding: calc(15 / 7.68 * 1vw) calc(18 / 7.68 * 1vw);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .showImgBigWrapper button:hover {
+    animation: reverseIn 0.3s forwards;
+  }
+
+  @keyframes reverseIn {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 90deg;
+    }
+  }
+
+  @keyframes reverseOut {
+    from {
+      rotate: 0;
+    }
+    to {
+      rotate: -90deg;
+    }
+  }
+
+  .showImgBigWrapper button > i {
+    font-size: calc(25 / 7.68 * 1vw);
+    color: #374151;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .showImgBigWrapper {
+    display: flex;
+    position: fixed;
+    z-index: 14;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.684);
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .showImgBigWrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: calc(5 / 4.8 * 1vw) solid rgba(255, 255, 255, 0.23);
+    border-radius: calc(8 / 4.8 * 1vw);
+  }
+
+  .showImgBigWrapper > div > img {
+    max-width: calc(500 / 4.8 * 1vw);
+    max-height: calc(500 / 4.8 * 1vw);
+    /* transform: scale(3.4); */
+    border-radius: calc(8 / 4.8 * 1vw);
+  }
+
+  .showImgBigWrapper button {
+    position: absolute;
+    top: calc(-20 / 4.8 * 1vw);
+    right: calc(-20 / 4.8 * 1vw);
+    background-color: white;
+    padding: calc(15 / 4.8 * 1vw) calc(18 / 4.8 * 1vw);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .showImgBigWrapper button:hover {
+    animation: reverseIn 0.3s forwards;
+  }
+
+  @keyframes reverseIn {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 90deg;
+    }
+  }
+
+  @keyframes reverseOut {
+    from {
+      rotate: 0;
+    }
+    to {
+      rotate: -90deg;
+    }
+  }
+
+  .showImgBigWrapper button > i {
+    font-size: calc(25 / 4.8 * 1vw);
+    color: #374151;
+  }
+}

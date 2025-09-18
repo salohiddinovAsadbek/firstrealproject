@@ -1,10 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../components/header";
 import Navigation from "../components/Navigation";
 import "../styles/account.css";
+import { getActiveSection } from "../store/activeSections";
+import Edit from "../components/edit";
 
 function UserAccount() {
   const isUserActivated = useSelector((state) => state.userData);
+  const dispatch = useDispatch();
+  const isActiveSection = useSelector((state) => state.activeData);
 
   return (
     <div className="account">
@@ -21,7 +25,13 @@ function UserAccount() {
                 <div>
                   <h1>N/A</h1>
                   <p>N/A</p>
-                  <button>Tahrirlash</button>
+                  <button
+                    onClick={() => {
+                      dispatch(getActiveSection("tahrirlash"));
+                    }}
+                  >
+                    Tahrirlash
+                  </button>
                 </div>
               </div>
               <div className="userEnteredAccountCars">
@@ -61,6 +71,7 @@ function UserAccount() {
             </div>
           )}
         </div>
+        {isActiveSection === "tahrirlash" ? <Edit /> : ""}
       </div>
     </div>
   );
